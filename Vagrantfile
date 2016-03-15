@@ -15,7 +15,11 @@ Vagrant.configure(2) do |config|
   config.vm.box = "hashicorp/precise32"
   config.vm.provision :shell, path: "tutorails_bootstrap.sh"
   config.vm.network :forwarded_port, guest: 3000, host: 3000
+<<<<<<< HEAD
   config.vm.network :forwarded_port, guest: 3232, host: 3232
+=======
+  config.vm.network :forwarded_port, guest: 5432, host: 5432
+>>>>>>> upstream/master
 
   # Mac Specific if Port Forarding is not working
   # Requires you install vagrant triggers
