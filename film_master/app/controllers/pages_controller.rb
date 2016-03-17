@@ -1,6 +1,6 @@
 class PagesController < ActionController::Base
 
 	def home
-			render("home")
+		render("home")
 	end
 end

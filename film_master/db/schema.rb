@@ -16,8 +16,11 @@ ActiveRecord::Schema.define(version: 20160315011258) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "genres", primary_key: "genreid", force: :cascade do |t|
-    t.string "gname", limit: 10
+  create_table "genres", force: :cascade do |t|
+    t.string   "genreID"
+    t.string   "gName"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
