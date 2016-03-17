@@ -14,8 +14,24 @@
 
 ActiveRecord::Schema.define(version: 20160317181838) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+
+  create_table "actors", primary_key: "actorid", force: :cascade do |t|
+    t.string "fname", limit: 30, null: false
+    t.string "lname", limit: 30, null: false
+  end
+
+  create_table "directors", primary_key: "directorid", force: :cascade do |t|
+    t.string "lname", limit: 30, null: false
+    t.string "fname", limit: 30, null: false
+  end
+
+  create_table "studios", primary_key: "studioid", force: :cascade do |t|
+    t.string "studio_name", limit: 20, null: false
+    t.string "country",     limit: 20, null: false
 
   create_table "genres", primary_key: "genreid", force: :cascade do |t|
     t.string "gname", limit: 20, null: false
@@ -51,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160317181838) do
     t.integer  "movieid",      default: "nextval('ratings_movieid_seq'::regclass)", null: false
     t.integer  "rating",                                                            null: false
     t.date     "datereleased",                                                      null: false
+
   end
 
 
@@ -73,6 +90,7 @@ ActiveRecord::Schema.define(version: 20160317181838) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
 
   add_foreign_key "ratings", "movies", column: "movieid", primary_key: "movieid", name: "ratings_movieid_fkey"
 
