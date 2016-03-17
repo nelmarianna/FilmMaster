@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317183210) do
+
+ActiveRecord::Schema.define(version: 20160317181838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +24,35 @@ ActiveRecord::Schema.define(version: 20160317183210) do
   create_table "roles", primary_key: "roleid", force: :cascade do |t|
     t.string "rname", limit: 30, null: false
   end
+
+  create_table "movies", primary_key: "movieid", force: :cascade do |t|
+    t.string  "mname",         limit: 20, null: false
+    t.text    "summary",                  null: false
+    t.integer "overallrating"
+    t.string  "language",      limit: 10, null: false
+    t.date    "datereleased",             null: false
+    t.string  "maturitylevel", limit: 4,  null: false
+    t.boolean "subtitle",                 null: false
+    t.time    "duration",                 null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "gender",     limit: 1,  null: false
+    t.date     "birthday",              null: false
+    t.string   "language",   limit: 10, null: false
+    t.string   "agerange",   limit: 4,  null: false
+  end
+
+  create_table "ratings", primary_key: "ratingid", force: :cascade do |t|
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
+    t.integer  "movieid",      default: "nextval('ratings_movieid_seq'::regclass)", null: false
+    t.integer  "rating",                                                            null: false
+    t.date     "datereleased",                                                      null: false
+  end
+
 
   create_table "users", primary_key: "userid", force: :cascade do |t|
     t.string   "email",                             default: "", null: false
@@ -43,5 +73,7 @@ ActiveRecord::Schema.define(version: 20160317183210) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  add_foreign_key "ratings", "movies", column: "movieid", primary_key: "movieid", name: "ratings_movieid_fkey"
 
 end
