@@ -4,7 +4,7 @@ development:
   username: filmmaster
   password: 1234
   host: localhost
-  port: 3000
+  port: 5432
 
 test:
   adapter: postgresql
@@ -19,4 +19,4 @@ production:
   username: filmmaster
   password: 1234
   host: localhost
-  port: 3000
+  port: 5432

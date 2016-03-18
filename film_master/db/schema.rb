@@ -11,67 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160317181838) do
-
+ActiveRecord::Schema.define(version: 20160318060620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
-  create_table "actors", primary_key: "actorid", force: :cascade do |t|
-    t.string "fname", limit: 30, null: false
-    t.string "lname", limit: 30, null: false
+  create_table "actors", primary_key: "actor_id", force: :cascade do |t|
+    t.string   "fName",      null: false
+    t.string   "lName",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "directors", primary_key: "directorid", force: :cascade do |t|
-    t.string "lname", limit: 30, null: false
-    t.string "fname", limit: 30, null: false
-  end
-
-  create_table "studios", primary_key: "studioid", force: :cascade do |t|
-    t.string "studio_name", limit: 20, null: false
-    t.string "country",     limit: 20, null: false
-
-  create_table "genres", primary_key: "genreid", force: :cascade do |t|
+  create_table "genres", primary_key: "genre_id", force: :cascade do |t|
     t.string "gname", limit: 20, null: false
   end
 
-  create_table "roles", primary_key: "roleid", force: :cascade do |t|
+  create_table "roles", primary_key: "role_id", force: :cascade do |t|
     t.string "rname", limit: 30, null: false
   end
 
-  create_table "movies", primary_key: "movieid", force: :cascade do |t|
-    t.string  "mname",         limit: 20, null: false
-    t.text    "summary",                  null: false
-    t.integer "overallrating"
-    t.string  "language",      limit: 10, null: false
-    t.date    "datereleased",             null: false
-    t.string  "maturitylevel", limit: 4,  null: false
-    t.boolean "subtitle",                 null: false
-    t.time    "duration",                 null: false
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "gender",     limit: 1,  null: false
-    t.date     "birthday",              null: false
-    t.string   "language",   limit: 10, null: false
-    t.string   "agerange",   limit: 4,  null: false
-  end
-
-  create_table "ratings", primary_key: "ratingid", force: :cascade do |t|
-    t.datetime "created_at",                                                        null: false
-    t.datetime "updated_at",                                                        null: false
-    t.integer  "movieid",      default: "nextval('ratings_movieid_seq'::regclass)", null: false
-    t.integer  "rating",                                                            null: false
-    t.date     "datereleased",                                                      null: false
-
-  end
-
-
-  create_table "users", primary_key: "userid", force: :cascade do |t|
+  create_table "users", primary_key: "used_id", force: :cascade do |t|
     t.string   "email",                             default: "", null: false
     t.string   "encrypted_password",                default: "", null: false
     t.string   "reset_password_token"
@@ -90,8 +50,5 @@ ActiveRecord::Schema.define(version: 20160317181838) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-
-  add_foreign_key "ratings", "movies", column: "movieid", primary_key: "movieid", name: "ratings_movieid_fkey"
 
 end
