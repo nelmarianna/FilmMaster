@@ -21,50 +21,12 @@ ActiveRecord::Schema.define(version: 20160318222933) do
     t.string "lName", null: false
   end
 
-  create_table "directors", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "genres", primary_key: "genre_id", force: :cascade do |t|
     t.string "gname", limit: 20, null: false
   end
 
-  create_table "movies", primary_key: "movieid", force: :cascade do |t|
-    t.string  "mname",         limit: 20, null: false
-    t.text    "summary",                  null: false
-    t.integer "overallrating"
-    t.string  "language",      limit: 10, null: false
-    t.date    "datereleased",             null: false
-    t.string  "maturitylevel", limit: 4,  null: false
-    t.boolean "subtitle",                 null: false
-    t.time    "duration",                 null: false
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "gender",     limit: 1,  null: false
-    t.date     "birthday",              null: false
-    t.string   "language",   limit: 10, null: false
-    t.string   "agerange",   limit: 4,  null: false
-  end
-
-  create_table "ratings", primary_key: "ratingid", force: :cascade do |t|
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "movieid",      default: 0, null: false
-    t.integer  "rating",                   null: false
-    t.date     "datereleased",             null: false
-  end
-
   create_table "roles", primary_key: "role_id", force: :cascade do |t|
     t.string "rname", limit: 30, null: false
-  end
-
-  create_table "studios", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", primary_key: "used_id", force: :cascade do |t|
