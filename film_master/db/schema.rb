@@ -11,30 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160317183918) do
+ActiveRecord::Schema.define(version: 20160318060620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
   create_table "actors", primary_key: "actor_id", force: :cascade do |t|
-    t.string   "fName",      null: false
-    t.string   "lName",      null: false
+    t.string "fName", null: false
+    t.string "lName", null: false
+  end
 
+  create_table "directors", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "genres", primary_key: "genre_id", force: :cascade do |t|
     t.string "gname", limit: 20, null: false
   end
 
+  create_table "movies", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "roles", primary_key: "role_id", force: :cascade do |t|
     t.string "rname", limit: 30, null: false
   end
 
+  create_table "studios", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", primary_key: "used_id", force: :cascade do |t|
-    t.string   "email",                             default: "", null: false
-    t.string   "encrypted_password",                default: "", null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
