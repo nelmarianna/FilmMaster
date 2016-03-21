@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20160320044306) do
 
   # These are extensions that must be enabled in order to support this database
@@ -93,6 +94,16 @@ ActiveRecord::Schema.define(version: 20160320044306) do
     t.string   "country",                limit: 20,              null: false
     t.string   "city",                   limit: 50,              null: false
     t.string   "province",               limit: 30,              null: false
+
+  create_table "directors", primary_key: "director_id", force: :cascade do |t|
+    t.string "fName", null: false
+    t.string "lName", null: false
+  end
+
+
+  create_table "studios", primary_key: "studio_id", force: :cascade do |t|
+    t.string "studio_name", null: false
+    t.string "country",     null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
