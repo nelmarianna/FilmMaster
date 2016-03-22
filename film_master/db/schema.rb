@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(version: 20160320044306) do
   add_index "genres_profiles", ["genre_id"], name: "index_genres_profiles_on_genre_id", using: :btree
   add_index "genres_profiles", ["profile_id"], name: "index_genres_profiles_on_profile_id", using: :btree
 
+  create_table "movies", primary_key: "movie_id", force: :cascade do |t|
+    t.integer  "overall_rating", null: false
+    t.string   "m_name"
+    t.string   "summary"
+    t.string   "language"
+    t.string   "maturity_level"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.date     "date_released"
+    t.time     "duration"
+  end
+  
   create_table "movies_roles", id: false, force: :cascade do |t|
     t.integer "movie_id", null: false
     t.integer "role_id",  null: false
