@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20160320044306) do
     t.string   "country",                limit: 20,              null: false
     t.string   "city",                   limit: 50,              null: false
     t.string   "province",               limit: 30,              null: false
+end 
 
   create_table "directors", primary_key: "director_id", force: :cascade do |t|
     t.string "fName", null: false
