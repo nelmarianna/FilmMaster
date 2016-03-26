@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322175805) do
+ActiveRecord::Schema.define(version: 20160325203537) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +31,8 @@ ActiveRecord::Schema.define(version: 20160322175805) do
   add_index "actors_roles", ["role_id"], name: "index_actors_roles_on_role_id", using: :btree
 
   create_table "directors", primary_key: "director_id", force: :cascade do |t|
-    t.string   "fName",      null: false
-    t.string   "lName",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "fName", null: false
+    t.string "lName", null: false
   end
 
   create_table "genres", primary_key: "genre_id", force: :cascade do |t|
@@ -111,13 +110,11 @@ ActiveRecord::Schema.define(version: 20160322175805) do
   end
 
   create_table "studios", primary_key: "studio_id", force: :cascade do |t|
-    t.string   "studio_name", null: false
-    t.string   "country",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string "studio_name", null: false
+    t.string "country",     null: false
   end
 
-    create_table "users", primary_key: "used_id", force: :cascade do |t|
+  create_table "users", primary_key: "user_id", force: :cascade do |t|
     t.string   "email",                             default: "", null: false
     t.string   "encrypted_password",                default: "", null: false
     t.string   "reset_password_token"
