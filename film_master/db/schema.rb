@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326014544) do
+ActiveRecord::Schema.define(version: 20160326033138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,10 +36,8 @@ ActiveRecord::Schema.define(version: 20160326014544) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "genres", force: :cascade do |t|
-    t.string   "gName"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "genres", primary_key: "genre_id", force: :cascade do |t|
+    t.string "gName", limit: 20
   end
 
   create_table "genres_movies", id: false, force: :cascade do |t|
@@ -107,10 +105,8 @@ ActiveRecord::Schema.define(version: 20160326014544) do
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
-  create_table "roles", force: :cascade do |t|
-    t.string   "rName",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "roles", primary_key: "role_id", force: :cascade do |t|
+    t.string "rName", limit: 30, null: false
   end
 
   create_table "studios", primary_key: "studio_id", force: :cascade do |t|
@@ -120,13 +116,13 @@ ActiveRecord::Schema.define(version: 20160326014544) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+  create_table "users", primary_key: "user_id", force: :cascade do |t|
+    t.string   "email",                             default: "", null: false
+    t.string   "encrypted_password",                default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                     default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -135,11 +131,16 @@ ActiveRecord::Schema.define(version: 20160326014544) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,  null: false
+    t.integer  "failed_attempts",                   default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.string   "fName",                  limit: 30,              null: false
+    t.string   "lName",                  limit: 30,              null: false
+    t.string   "country",                limit: 20,              null: false
+    t.string   "city",                   limit: 50,              null: false
+    t.string   "province",               limit: 30,              null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
