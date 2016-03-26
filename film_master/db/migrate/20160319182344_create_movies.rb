@@ -6,7 +6,7 @@ class CreateMovies < ActiveRecord::Migration
     	t.string :m_name, :summary, :language, :maturity_level
       t.timestamps null: false
       t.date :date_released
-      t.time :duration
+      t.integer :duration
     end
   end
 end
