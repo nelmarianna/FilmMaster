@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331141204) do
+ActiveRecord::Schema.define(version: 20160331150102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20160331141204) do
   add_index "directors", ["director_id"], name: "index_directors_on_director_id", unique: true, using: :btree
 
   create_table "genres", force: :cascade do |t|
-    t.string  "gName",    limit: 20, null: false
+    t.string  "gName",    limit: 20
     t.integer "genre_id"
   end
 
@@ -64,16 +64,15 @@ ActiveRecord::Schema.define(version: 20160331141204) do
   add_index "genres_profiles", ["profile_id"], name: "index_genres_profiles_on_profile_id", using: :btree
 
   create_table "movies", force: :cascade do |t|
-    t.integer  "overall_rating", null: false
-    t.string   "m_name"
-    t.string   "summary"
-    t.string   "language"
-    t.string   "maturity_level"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.date     "date_released"
-    t.integer  "duration"
-    t.integer  "movie_id"
+    t.integer "overall_rating", null: false
+    t.string  "m_name"
+    t.string  "summary"
+    t.string  "language"
+    t.string  "maturity_level"
+    t.date    "date_released"
+    t.integer "duration"
+    t.integer "movie_id"
+    t.boolean "subtitle"
   end
 
   add_index "movies", ["movie_id"], name: "index_movies_on_movie_id", unique: true, using: :btree
@@ -140,8 +139,18 @@ ActiveRecord::Schema.define(version: 20160331141204) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                     default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.integer  "failed_attempts",                   default: 0,  null: false
+    t.string   "unlock_token"
+    t.datetime "locked_at"
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.string   "fName",                  limit: 30,              null: false
