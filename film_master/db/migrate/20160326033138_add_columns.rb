@@ -1,5 +1,9 @@
 class AddColumns < ActiveRecord::Migration
   def change
+
+  #	remove_column :movies, :id
+  #	remove_column :movies, :movie_id
+#	 add_column :movies, :movie_id, :primary_key
  #  	remove_column :users, :id
 	# add_column :users, :user_id, :primary_key
 	# add_column :users, :fName, :string, limit: 30, null:false
