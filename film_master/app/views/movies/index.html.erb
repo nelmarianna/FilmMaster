@@ -1,0 +1,24 @@
+  <%= stylesheet_link_tag    'movie', media: 'all', 'data-turbolinks-track' => true %>
+
+<h3> Displaying <%= @movies.size %> movies  </h3>
+
+
+			<% if @movies.present? %>
+			  <%= render @movies %>
+			<% else %>
+			  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+			<% end %>
+
+<ul>
+<% @movies.each do |movie| %>
+		
+	<div>
+	<li>	<a href = "/movies/<%= movie.movie_id %>"> <%= image_tag "movieImages/#{movie.movie_id}.jpg", :class=>"movieImg"%> </a>
+	
+		<h2> <%= movie.m_name %> </h2></li>
+	</div>
+	<!-- 	<a href = "/blog_posts/#{blog_post.id}/edit"> Edit blog post</a> 
+		<a href = "/blog_posts/#{blog_post.id}" data-method="delete"> Delete blog post </a>-->
+	<% end %>
+
+</ul>
