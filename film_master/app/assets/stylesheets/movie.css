@@ -1,0 +1,24 @@
+.movieImg{
+	height: 400px;
+	width: 300px;
+}
+ li a{
+	display: block;
+	 padding: 14px 16px;
+}
+li h2{
+	text-align: center;
+	color: purple;
+}
+li{
+	float: left;
+}
+ul{
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.search form{
+	margin-top: 20px;
+}

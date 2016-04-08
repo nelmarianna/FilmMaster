@@ -9,7 +9,7 @@ class ChangePrimarykeys < ActiveRecord::Migration
 #	add_column :directors, :director_id, :integer
 #	add_index :directors, :director_id, unique: true
 
-  #	rename_column :genres, :genre_id, :id
+  	rename_column :genres, :genre_id, :id
 #	add_column  :genres, :genre_id, :integer
 #	add_index :genres, :genre_id, unique: true
 
