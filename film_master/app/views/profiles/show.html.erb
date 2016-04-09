@@ -1,7 +1,20 @@
+<div class="profile_page">
+	<h1><%= full_name %></h1>
+	
+	<div class="profile_info">
 
-<%= debug @profiles %>
+		<div class="info_other">
+			<p> <%= @profiles.gender %> </p>
+			<p> <%= @profiles.birthday %> </p>
+			<p> <%= @profiles.language %> </p>
+			<a href="/profiles/<%= @profiles.profile_id %>/edit-profile">edit profile</a>
+		</div>
 
-<h1><%= full_name %></h1>
-<p> <%= @profiles.gender %> </p>
-<p> <%= @profiles.birthday %> </p>
-<p> <%= @profiles.ageRange %> </p>
+	</div>
+
+</div>
+
+
+
+
+
