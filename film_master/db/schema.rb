@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409163925) do
+
+ActiveRecord::Schema.define(version: 20160407163258) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +26,10 @@ ActiveRecord::Schema.define(version: 20160409163925) do
   end
 
   create_table "directors", primary_key: "director_id", force: :cascade do |t|
-    t.string "fName", null: false
-    t.string "lName", null: false
+    t.string   "fName",      null: false
+    t.string   "lName",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "directors_movies", id: false, force: :cascade do |t|
@@ -37,7 +41,9 @@ ActiveRecord::Schema.define(version: 20160409163925) do
   add_index "directors_movies", ["movie_id"], name: "index_directors_movies_on_movie_id", using: :btree
 
   create_table "genres", primary_key: "genre_id", force: :cascade do |t|
-    t.string "gName", limit: 20
+
+    t.string "gName"
+
   end
 
   create_table "genres_movies", id: false, force: :cascade do |t|
@@ -83,15 +89,13 @@ ActiveRecord::Schema.define(version: 20160409163925) do
   add_index "movies_studios", ["movie_id"], name: "index_movies_studios_on_movie_id", using: :btree
   add_index "movies_studios", ["studio_id"], name: "index_movies_studios_on_studio_id", using: :btree
 
-  create_table "movies_users", force: :cascade do |t|
-    t.integer "user_id",   null: false
-    t.integer "movie_id",  null: false
-    t.integer "rating",    null: false
-    t.integer "rating_id"
+  create_table "movies_users", primary_key: "rating_id", force: :cascade do |t|
+    t.integer "user_id",  null: false
+    t.integer "movie_id", null: false
+    t.integer "rating",   null: false
   end
 
   add_index "movies_users", ["movie_id"], name: "index_movies_users_on_movie_id", using: :btree
-  add_index "movies_users", ["rating_id"], name: "index_movies_users_on_rating_id", unique: true, using: :btree
   add_index "movies_users", ["user_id"], name: "index_movies_users_on_user_id", using: :btree
 
   create_table "profiles", primary_key: "profile_id", force: :cascade do |t|
@@ -105,13 +109,17 @@ ActiveRecord::Schema.define(version: 20160409163925) do
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "roles", primary_key: "role_id", force: :cascade do |t|
-    t.string  "rName",    limit: 30, null: false
-    t.integer "actor_id"
+    t.string   "rName",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "actor_id"
   end
 
   create_table "studios", primary_key: "studio_id", force: :cascade do |t|
-    t.string "studio_name", null: false
-    t.string "country",     null: false
+    t.string   "studio_name", null: false
+    t.string   "country",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", primary_key: "user_id", force: :cascade do |t|
@@ -124,12 +132,12 @@ ActiveRecord::Schema.define(version: 20160409163925) do
     t.datetime "last_sign_in_at"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+    t.boolean  "admin",                             default: false
     t.string   "fName",                  limit: 30,                 null: false
     t.string   "lName",                  limit: 30,                 null: false
+    t.string   "province",               limit: 30,                 null: false
     t.string   "country",                limit: 20,                 null: false
     t.string   "city",                   limit: 50,                 null: false
-    t.string   "province",               limit: 30,                 null: false
-    t.boolean  "admin",                             default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
