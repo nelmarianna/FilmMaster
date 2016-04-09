@@ -16,6 +16,6 @@ class AddUserColumns < ActiveRecord::Migration
 	   # remove_column :users, :unlock_token
 	   # remove_column :users, :locked_at
   
-  remove_column :users, :sign_in_count
+  remove_column :users, :sign_in_count\
   end
 end
