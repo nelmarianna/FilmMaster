@@ -1,16 +1,18 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
+</head>
 <div class="profile_page">
+
 	<h1><%= full_name %></h1>
 	
-	<div class="profile_info">
-
-		<div class="info_other">
-			<p> <%= @profiles.gender %> </p>
-			<p> <%= @profiles.birthday %> </p>
-			<p> <%= @profiles.language %> </p>
+	
+		<div class="profile_info">
+			<p> Gender: <%= @profiles.gender %> </p>
+			<p>Birthday: <%= @profiles.birthday %> </p>
+			<p>Language: <%= @profiles.language %> </p>
 			<a href="/profiles/<%= @profiles.profile_id %>/edit-profile">edit profile</a>
 		</div>
 
-	</div>
 
 </div>
 
