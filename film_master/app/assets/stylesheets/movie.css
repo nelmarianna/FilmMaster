@@ -1,6 +1,24 @@
+.content{
+	background-color: black;
+}
 .movieImg{
 	height: 400px;
 	width: 300px;
+}
+.left .movieImg{
+	float: left;
+	margin: 5px;
+}
+.right{
+	float: right;
+	width: 70%;
+	margin: 10px;
+}
+.right li{
+	padding: 5px;
+}
+.clear{
+	clear: both;
 }
  li a{
 	display: block;
@@ -8,7 +26,14 @@
 }
 li h2{
 	text-align: center;
-	color: purple;
+	color: turquoise;
+	margin-top: 2px;
+	padding-bottom: 3px;
+	font-family: 'Abel', sans-serif;
+	font-size: 20px;
+}
+h1{
+	font-family: 'Abel', sans-serif;
 }
 li{
 	float: left;
@@ -21,4 +46,10 @@ ul{
 }
 .search form{
 	margin-top: 20px;
+}
+h4{
+	color: silver;
+}
+h3,p,li{
+	color: silver;
 }

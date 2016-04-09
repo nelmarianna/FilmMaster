@@ -1,12 +1,70 @@
   <%= stylesheet_link_tag    'movie', media: 'all', 'data-turbolinks-track' => true %>
+<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
+
+<h1> <%= @movies.m_name %> </h1>
+
+<div class="left">
  <%= image_tag "movieImages/#{@movies.movie_id}.jpg", :class=>"movieImg"%> 
-	
-<h2> <%= @movies.m_name %> </h2>
-<h2> <%= @movies.summary %> </h2>
-<h2> <%= @movies.language %> </h2>
-<h2> <%= @movies.maturity_level %> </h2>
-<h2> <%= @movies.date_released %> </h2>
-<h2> <%= @movies.duration %> </h2>
+</div>	
+<div class="right">
+<h3> Summary </h3>
+ <p><%= @movies.summary %></p>
+<h3> Movie Language: <%= @movies.language %> </h3>
+<h3>  Maturity Level: <%= @movies.maturity_level %> </h3>
+<h3>  Date released: <%= @movies.date_released %> </h3>
+<h3>  Movie duration: <%= @movies.duration %> minutes </h3>
+</br>
+<h3>  Movie studio(s): </h3>
+<!-- Get studio that made movie-->
+<% @movies.studios.each do |studio| %>
+ <li> <%= studio.studio_name %></li>
+<% end %>
 
-Movie_genres.joins(:movies,:c)
+</br>
+
+<h3>  Movie Actor(s): </h3>
+<!-- Get actors in movie-->
+<% @movies.roles.each do |role| %>
+ <li> <%= role.actor.fName %> <%= role.actor.lName %> plays <%= role.rName %></li>
+<% end %>
+
+</br>
+
+<h3>  Movie director(s): </h3>
+<!-- Get directors of the movie-->
+<% @movies.directors.each do |director| %>
+ <li> <%= director.fName %> <%= director.lName %></li>
+<% end %>
+
+</br>
+
+<h3>  Movie genres: </h3>
+<!-- Get genres related to the movie-->
+<% @movies.genres.each do |genre| %>
+ <li> <%= genre.gName %></li>
+<% end %>
+
+</br>
+
+<!-- List all users and  their rating of the movie IF THEY EXIST-->
+
+
+</div>
+
+
+<div class="clear">
+<% if @movies.users.size > 0 %>
+	<% @users.each do |user| %>
+	 <p><%= user.fName %> <%= user.lName %> <%= user.genre_movie.rating %></p>
+	<% end %>
+<% else %>
+	  <p>No users have rated this movie.</p>
+<% end %>
+
+<a href = "/movies_users/new"> Write a review</a>
+
+	<p> rate movie</p>
+	<p> this requies update restfulres to update movies overallR, userMoviesRated, users_movie</p>
+</div>
+

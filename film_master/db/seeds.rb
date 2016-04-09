@@ -3110,3 +3110,31 @@ genre_id:  013 #11
 movie_id:  052, #42,
 genre_id:  024 #20
 }])
+
+Profile.destroy_all
+ 
+ Profile.create!([{
+ profile_id: 001,
+ user_id: 001,
+ gender:"female",
+ language:"english",
+ birthday:Date.new(1984,10,10),
+ ageRange: 031
+ 
+ },
+ {
+ profile_id: 002,
+ user_id: 002,
+ gender:"female",
+ language:"english",
+ birthday:Date.new(1996,10,10),
+ ageRange: 017
+ },
+ {
+profile_id: 003,
+user_id: 003,
+gender:"male",
+ language:"english",
+ birthday:Date.new(2001,03,06),
+ ageRange: 015
+ }])
