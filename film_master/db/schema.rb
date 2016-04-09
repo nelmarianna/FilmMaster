@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407053321) do
+ActiveRecord::Schema.define(version: 20160409163925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20160407053321) do
   add_index "genres_profiles", ["genre_id"], name: "index_genres_profiles_on_genre_id", using: :btree
   add_index "genres_profiles", ["profile_id"], name: "index_genres_profiles_on_profile_id", using: :btree
 
-  create_table "movies", force: :cascade do |t|
+  create_table "movies", primary_key: "movie_id", force: :cascade do |t|
     t.integer "overall_rating", null: false
     t.string  "m_name"
     t.string  "summary"
@@ -64,11 +64,8 @@ ActiveRecord::Schema.define(version: 20160407053321) do
     t.string  "maturity_level"
     t.date    "date_released"
     t.integer "duration"
-    t.integer "movie_id"
     t.boolean "subtitle"
   end
-
-  add_index "movies", ["movie_id"], name: "index_movies_on_movie_id", unique: true, using: :btree
 
   create_table "movies_roles", id: false, force: :cascade do |t|
     t.integer "movie_id", null: false
@@ -98,13 +95,11 @@ ActiveRecord::Schema.define(version: 20160407053321) do
   add_index "movies_users", ["user_id"], name: "index_movies_users_on_user_id", using: :btree
 
   create_table "profiles", primary_key: "profile_id", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.string   "gender"
-    t.string   "language"
-    t.date     "birthday"
-    t.integer  "ageRange"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "user_id",  null: false
+    t.string  "gender"
+    t.string  "language"
+    t.date    "birthday"
+    t.integer "ageRange"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
@@ -125,18 +120,8 @@ ActiveRecord::Schema.define(version: 20160407053321) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                     default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",                   default: 0,     null: false
-    t.string   "unlock_token"
-    t.datetime "locked_at"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
     t.string   "fName",                  limit: 30,                 null: false
