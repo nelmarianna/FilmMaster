@@ -3120,75 +3120,75 @@ user_id: 001,
 gender:"female",
 language:"english",
 birthday:Date.new(1984,10,10),
-ageRange: 031
+ageRange: 37
 
 },
 {
 profile_id: 002,
-User_id: 002,
+user_id: 002,
 gender:"female",
 language:"english",
 birthday:Date.new(1996,10,10),
-ageRange: 019
+ageRange: 23
 
 },
 {
 profile_id: 003,
-User_id: 003,
+user_id: 003,
 gender:"male",
 language:"english",
 birthday:Date.new(2001,03,06),
-ageRange: 015
+ageRange: 17
 },{
 profile_id: 004,
-User_id: 004
+user_id: 004
 },{
 profile_id: 005,
-User_id: 005
+user_id: 005
 },{
 profile_id: 006,
-User_id: 006
+user_id: 006
 },{
 profile_id: 007,
-User_id: 007
+user_id: 007
 },{
 profile_id: 010,
-User_id: 010
+user_id: 010
 },{
 profile_id: 011,
-User_id: 011
+user_id: 011
 },{
 profile_id: 012,
-User_id: 012
+user_id: 012
 },{
 profile_id: 013,
-User_id: 013
+user_id: 013
 },{
 profile_id: 014,
-User_id: 014
+user_id: 014
 },{
 profile_id: 015,
-User_id: 015
+user_id: 015
 },{
 profile_id: 016,
-User_id: 016
+user_id: 016
 },{
 profile_id: 017,
-User_id: 017
+user_id: 017
 },{
 profile_id: 020,
-User_id: 0020
+user_id: 0020
 },{
 profile_id: 021,
-User_id: 021
+user_id: 021
 },{
 profile_id: 022,
-User_id: 022
+user_id: 022
 },{
 profile_id: 023,
-User_id: 023
+user_id: 023
 },
 {
 profile_id: 024,
-User_id: 024
+user_id: 024
 }])

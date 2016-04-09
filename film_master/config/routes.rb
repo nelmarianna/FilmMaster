@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
 
-
-  get 'users/show'
-
   	devise_for :users, :controllers => { registrations: 'registrations' }
  	get "/home" => "pages#home"
 	root "pages#home"
-	resources :users
+	
+	get "profiles/:profile_id" => "profiles#show", as: :profile
 
-#create page to show all movies
-get "/movies" => "movies#index"
-get "/movies/:movie_id" => "movies#show", as: :movie
+	#create page to show all movies
+	get "/movies" => "movies#index"
+	get "/movies/:movie_id" => "movies#show", as: :movie
 
 end
