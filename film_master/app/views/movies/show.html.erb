@@ -1,0 +1,12 @@
+  <%= stylesheet_link_tag    'movie', media: 'all', 'data-turbolinks-track' => true %>
+
+ <%= image_tag "movieImages/#{@movies.movie_id}.jpg", :class=>"movieImg"%> 
+	
+<h2> <%= @movies.m_name %> </h2>
+<h2> <%= @movies.summary %> </h2>
+<h2> <%= @movies.language %> </h2>
+<h2> <%= @movies.maturity_level %> </h2>
+<h2> <%= @movies.date_released %> </h2>
+<h2> <%= @movies.duration %> </h2>
+
+Movie_genres.joins(:movies,:c)
