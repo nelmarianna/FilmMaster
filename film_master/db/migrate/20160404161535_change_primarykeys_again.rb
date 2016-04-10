@@ -4,6 +4,7 @@ class ChangePrimarykeysAgain < ActiveRecord::Migration
   #	remove_column :movies, :id
   #	remove_column :movies, :movie_id
 #	 add_column :movies, :movie_id, :primary_key
+=begin
 
 	 remove_column :users, :id
   	remove_column :users, :user_id
@@ -32,6 +33,7 @@ class ChangePrimarykeysAgain < ActiveRecord::Migration
 	 remove_column :studios, :id
   	remove_column :studios, :studio_id
 	 add_column :studios, :studio_id, :primary_key
+=end
 
   end
 end
