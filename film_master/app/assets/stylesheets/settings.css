@@ -3,7 +3,8 @@
 	padding: 20px 50px;
 	margin:0px auto;
 	width:60%;
-	height:800px;
+	height:900px;
+	/*overflow: hidden;*/
 }
 
 .account_info{
@@ -48,7 +49,20 @@
 	margin:10px;
 	overflow: hidden;
 }
-.other{
-	margin: 10px;
-	overflow:hidden;
+.cancel{
+	margin:10px;
+	overflow: hidden;
+}
+.cancellation{
+	background-color: #FFFFFF;
+	border-radius:5px;
+	padding:15px;
+	float:right;
+	color:#BBBBBB;
+	width:70%;
+}
+.cancellation p{
+	font-family: Abel;
+	color:#555555;
+	font-size:30px;
 }
