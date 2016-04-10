@@ -13,6 +13,12 @@ class SearchesController < ApplicationController
 
 	def show
 		@search = Search.find(params[:id])
+		@movies = Movie.all
+		if @search
+		   	 @movies = Movie.search(@search)
+		  else
+    			@movies = Movie.all
+		  end
 	end
 
 	private
