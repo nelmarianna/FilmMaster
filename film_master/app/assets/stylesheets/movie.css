@@ -5,19 +5,19 @@
 	height: 400px;
 	width: 300px;
 }
-.left .movieImg{
+.movie-left .movieImg{
 	float: left;
 	margin: 5px;
 }
-.right{
+.movie-right{
 	float: right;
 	width: 70%;
 	margin: 10px;
 }
-.right li{
+.movie-right li{
 	padding: 5px;
 }
-.clear{
+.movie-clear{
 	clear: both;
 }
  li a{

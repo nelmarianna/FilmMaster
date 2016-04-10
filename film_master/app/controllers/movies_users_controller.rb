@@ -39,4 +39,5 @@ class MoviesUsersController < ApplicationController
 		@rating.destroy
 		redirect_to  "/movies/#{@rating.movie_id}" 
 	end
+
 end
