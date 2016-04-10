@@ -1,11 +1,12 @@
 
 body.sign{
 	background-image: url("/assets/sign.jpg");
-	 background-size: 100%;
+	 background-size: cover;
     background-repeat: no-repeat;
     background-position: 0px 0px;
     
 }
+
 
 h2{
 	color: white;

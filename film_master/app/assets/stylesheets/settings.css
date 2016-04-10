@@ -1,8 +1,4 @@
-
-body.profile{
-	background-color: black;
-}
-.profile_page{
+.account_page{
 	background-color: #BBBBBB;
 	padding: 20px 50px;
 	margin:0px auto;
@@ -10,7 +6,7 @@ body.profile{
 	height:800px;
 }
 
-.profile_info, .favourite_info{
+.account_info{
 	background-color: #FFFFFF;
 	border-radius:5px;
 	padding:15px;
@@ -19,26 +15,26 @@ body.profile{
 	width:70%;
 }
 
-.profile_page h1{
+.account_page h1{
 	font-family: Abel;
 	font-size: 50px;
 	font-weight: bold;
 	color:black;
 }
 
-.profile_info p,.favourite_info p{
+.account_info p{
 	font-family: Abel;
 	color:#555555;
 	font-size:30px;
 }
-.profile_info a, .favourite_info a{
+.account_info a{
 	font-family: Abel;
 	color:rgb(50, 101, 152);
 	font-size:30px;
 	float: right;
 	text-decoration: none;
 }
-.profile_info a:hover, .favourite_info a:hover{
+.account_info a:hover{
 	text-decoration: underline;
 }
 .heading{
@@ -48,11 +44,11 @@ body.profile{
 	float:left;
 	padding:0px;
 }
-.profile{
+.account{
 	margin:10px;
 	overflow: hidden;
 }
-.favourite{
+.other{
 	margin: 10px;
 	overflow:hidden;
 }
