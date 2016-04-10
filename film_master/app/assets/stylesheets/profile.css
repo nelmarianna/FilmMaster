@@ -9,7 +9,7 @@
 	
 }
 
-.profile_info{
+.profile_info, .favourite_info{
 	background-color: #FFFFFF;
 	border-radius:5px;
 	padding:15px;
@@ -25,19 +25,19 @@
 	color:black;
 }
 
-.profile_info p{
+.profile_info p,.favourite_info p{
 	font-family: Abel;
 	color:#555555;
 	font-size:30px;
 }
-.profile_info a{
+.profile_info a, .favourite_info a{
 	font-family: Abel;
 	color:rgb(50, 101, 152);
 	font-size:30px;
 	float: right;
 	text-decoration: none;
 }
-.profile_info a:hover{
+.profile_info a:hover, .favourite_info a:hover{
 	text-decoration: underline;
 }
 .heading{
@@ -45,4 +45,13 @@
 	color:rgb(0, 51, 102);
 	font-size:30px;
 	float:left;
+	padding:0px;
+}
+.profile{
+	margin:10px;
+	overflow: hidden;
+}
+.favourite{
+	margin: 10px;
+	overflow:hidden;
 }
