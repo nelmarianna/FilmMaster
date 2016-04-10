@@ -5,13 +5,17 @@
 
 	<h1><%= full_name %></h1>
 	
-	
 		<div class="profile_info">
 			<p> Gender: <%= @profiles.gender %> </p>
 			<p>Birthday: <%= @profiles.birthday %> </p>
 			<p>Language: <%= @profiles.language %> </p>
 			<a href="/profiles/<%= @profiles.profile_id %>/edit-profile">edit profile</a>
 		</div>
+
+		<div class="favourite">
+			<!-- genres here -->
+		</div> 
+
 
 
 </div>

@@ -1,14 +1,14 @@
 
-
 .profile_page{
-	background-color: blue;
+	background-color: #BBBBBB;
 	margin:0px 50px 0px 50px;
 	padding: 15px;
-
+	position: fixed;
+	
 }
 
 .profile_info{
-	background-color: orange;
+	background-color: #FFFFFF;
 	border-radius:5px;
 	padding:15px;
 }
