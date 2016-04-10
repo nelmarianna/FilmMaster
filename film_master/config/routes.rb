@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   	match 'users/:id' => 'users#destroy', :via => :delete, :as => :destroy_user
   	
   	resources :users, :only => [:show]
- 	
+ 	resources :searches
   	#root page
  	get "/home" => "pages#home"
 	root "pages#home"

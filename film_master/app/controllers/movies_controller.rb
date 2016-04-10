@@ -12,8 +12,9 @@ class MoviesController < ApplicationController
 
 	def show
 		@movies = Movie.find(params[:movie_id])
-		@ratings = MoviesUser.find_by_movie_id(params[:movie_id])
-		@reviews = MoviesUser.all
+		@ratings = MoviesUser.find_by_user_id(params[:user_id])
+		@rating = MoviesUser.find_by_movie_id_and_user_id(params[:movie_id],params[:user_id])
+
 		render("show")
 	end
 end

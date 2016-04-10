@@ -1,23 +1,26 @@
 .content{
 	background-color: black;
 }
+.movies{
+	background-color: #060d13;
+}
 .movieImg{
 	height: 400px;
 	width: 300px;
 }
-.movie-left .movieImg{
+.movie-left {
 	float: left;
 	margin: 5px;
 }
-.movie-right{
+.movies .movie-right{
 	float: right;
 	width: 70%;
 	margin: 10px;
 }
-.movie-right li{
+.movies .movie-right li{
 	padding: 5px;
 }
-.movie-clear{
+.movies .movie-clear{
 	clear: both;
 }
  li a{
@@ -38,18 +41,77 @@ h1{
 li{
 	float: left;
 }
-ul{
+.movielist ul{
   list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding-left: 65px;
+    padding-right: 0px;
     overflow: hidden;
+    clear: both;
+
 }
 .search form{
 	margin-top: 20px;
 }
-h4{
+.display h4{
+	color: silver;
+	float: right;
+	margin-right: 15px;
+	font-family: 'Abel', sans-serif;
+}
+h2{
 	color: silver;
 }
-h3,h2,h1,p,li{
+.movies .movie-right .inner-right{
+	float: right;
+	width: 50%;
+}
+.movies .movie-right .inner-left{
+	float: left;
+	width: 50%;
+}
+.movies h1{
+	font-size: 40px;
+	color: blue;
+	margin-left: 5px;
+}
+.movies  span.date{
+	color: grey;
+	font-size: 24px;
+}
+.movies .movie-right p{
+	font-size: 30px;
 	color: silver;
+	font-family: 'Abel', sans-serif;
+}
+.movies .movie-right .inner-left h3, .movies .movie-right .inner-right h3{
+	text-align: left;
+	font-size: 20px;
+	font-family: 'Abel', sans-serif;
+	color: navy;
+}
+.movies .movie-right .inner-left li, .movies .movie-right .inner-right li{
+	text-decoration: none;
+	display: block;
+	color: brown;
+	list-style: inline-block;
+}
+ .inner-right span{
+ 	font-family: 'Abel', sans-serif;
+ 	font-size: 16px;
+	color: pink;
+}
+
+.movies .movie-clear p{
+	font-size: 16px;
+	color: pink;
+	margin-left: 20px;
+}
+
+.movies .movie-clear a, .movies a{
+	float: right;
+	text-decoration: none;
+	color: magenta;
+	padding: 10px;
+	font-size: 20px;
 }

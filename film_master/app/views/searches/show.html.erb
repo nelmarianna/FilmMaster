@@ -1,0 +1,7 @@
+<h3> Search Results </h3>
+
+<% if @search.search_movies.empty? %>
+	<p> No movies found</p>
+<% else %>
+	<%= render @movies %>
+<% end %>
