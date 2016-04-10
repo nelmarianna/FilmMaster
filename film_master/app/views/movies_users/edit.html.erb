@@ -4,4 +4,20 @@
 <h1> Edit my review for <%= @movie.m_name %></h1>
 
 
+<%= form_for @rating, url: movies_users_edit_path(@rating), html: { method: :put } do |f| %>
+	<div>
+	<%= f.hidden_field :movie_id, :value => params[:movie_id] %>
+	<%= f.hidden_field :user_id, :value => params[:user_id] %>
 
+	<h2><%= f.label :updated_rating_for_movie%></h2>
+	<br />
+	<%= f.number_field :rating, {:min => 0, :max => 10} %>
+	</div>
+	<div>
+<h2>	<%= f.label :updated_review %></h2><br />
+	<%= f.text_area :body %>
+	</div>
+	<div>
+	<%= f.submit 'Update Review'%>
+	</div>
+<% end %>
