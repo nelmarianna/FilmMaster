@@ -15,7 +15,7 @@
  */
  body{
  	margin: auto;
- 	background-color: black;
+ 	background-color: transparent;
  }
 .header {
 	/*background-color: #476e9e;*/
@@ -83,7 +83,9 @@ li:hover .user-menu{
 
 .content-container{
 	margin:0px;
+	
 }
 .content{
 	margin-top:100px;
+	background-color: transparent;
 }

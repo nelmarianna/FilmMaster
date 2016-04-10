@@ -3,8 +3,7 @@ body.sign{
 	background-image: url("/assets/sign.jpg");
 	 background-size: 100%;
     background-repeat: no-repeat;
-    background-position: 0px 0px;
-    
+    background-color: transparent; 
 }
 
 h2{
@@ -24,6 +23,7 @@ h1{
     border-radius: 5px;
     border: 5px solid #325b84;
     margin: 100px;
+
 }
 
 .login-block h1 {
