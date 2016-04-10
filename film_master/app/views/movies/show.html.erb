@@ -55,14 +55,20 @@
 
 <div class="clear">
 <% if @movies.users.size > 0 %>
-	<% @users.each do |user| %>
-	 <p><%= user.fName %> <%= user.lName %> <%= user.genre_movie.rating %></p>
+	<h2>Movie reviews</h2>
+	<% @movies.users.each do |user| %>
+	 	<p><%= user.fName %> <%= user.lName %> -- Rated : <%= @ratings.rating %> / 10</p>
+		 <p><%= @ratings.body %></p>
 	<% end %>
 <% else %>
-	  <p>No users have rated this movie.</p>
+	  <p>No users have reviewed this movie.</p>
 <% end %>
 
-<a href = "/movies_users/new"> Write a review</a>
+if this user id AND movie id combination doesnt exist in table
+<%= link_to 'Write a review', movies_users_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id ) %>
+else
+<%= link_to 'Edit review', movies_users_edit_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id ) %>
+<a href = "/movies_users/:movie_id/:user_id" data-method="delete"> Delete review </a>
 
 	<p> rate movie</p>
 	<p> this requies update restfulres to update movies overallR, userMoviesRated, users_movie</p>

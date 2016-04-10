@@ -23,5 +23,4 @@ has_many :moviesRoles
 has_many :roles, :through  => :moviesRoles
 
 
-letsrate_rateable "rating"
 end
