@@ -1,5 +1,5 @@
 class DeleteRatingPrimaryKey < ActiveRecord::Migration
   def change
-  	remove_column :movies_users, :rating_id
+  	add_column :movies_users, :rating_id, :primary_key
   end
 end

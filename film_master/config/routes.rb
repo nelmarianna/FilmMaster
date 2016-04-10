@@ -28,9 +28,11 @@ get "/movies_users/:movie_id/:user_id/new" => "movies_users#new", :as => :movies
 
 get"/movies_users/:movie_id/:user_id/edit" => "movies_users#edit", :as => :movies_users_edit
 
+get "/movies_users/:movie_id/:user_id" => "movies_users#show", as: :movies_user
+
 post "/movies_users/:movie_id/:user_id/new" => "movies_users#create"
 
-patch "/movies_users/:movie_id/:user_id" => "movies_users#update"
+patch "/movies_users/:movie_id/:user_id/edit" => "movies_users#update"
 delete "/movies_users/:movie_id/:user_id" => "movies_users#destroy"
 
 end

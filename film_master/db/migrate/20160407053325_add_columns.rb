@@ -15,9 +15,9 @@ class AddColumns < ActiveRecord::Migration
 	# remove_column :genres, :id
 	# add_column :genres, :genre_id, :primary_key
 	# change_column :genres, :gName, :string, limit: 20
-	remove_column :genres, :created_at
-	 remove_column :genres, :updated_at
-rename_column :genres, :id, :genre_id
+#	remove_column :genres, :created_at
+#	 remove_column :genres, :updated_at
+#rename_column :genres, :id, :genre_id
 	# remove_column :roles, :id
 	# add_column :roles, :role_id, :primary_key
 	# change_column :roles, :rName, :string, limit: 30
