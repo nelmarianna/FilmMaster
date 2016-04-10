@@ -7,6 +7,7 @@
 	<div>
 	<%= f.hidden_field :movie_id, :value => params[:movie_id] %>
 	<%= f.hidden_field :user_id, :value => params[:user_id] %>
+	<%= f.hidden_field :rating_id, :value => params[:user_id] + params[:movie_id] %>
 
 	<h2><%= f.label :rating%></h2>
 	<br />
