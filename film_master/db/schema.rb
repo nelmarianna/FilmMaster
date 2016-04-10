@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20160409234662) do
     t.integer "user_id",  null: false
     t.integer "movie_id", null: false
     t.integer "rating",   null: false
+    t.string  "body"
   end
 
   add_index "movies_users", ["movie_id"], name: "index_movies_users_on_movie_id", using: :btree
