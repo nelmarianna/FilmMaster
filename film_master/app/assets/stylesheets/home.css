@@ -61,8 +61,8 @@ h3{
 
 body.home{
 	background-image: url("/assets/cover3.jpg");
-	 background-size: 100%;
+	 background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0px 38px;
+    background-position: 0px 80px;
     
 }
