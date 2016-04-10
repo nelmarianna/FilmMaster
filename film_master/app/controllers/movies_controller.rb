@@ -13,12 +13,7 @@ class MoviesController < ApplicationController
 	def show
 		@movies = Movie.find(params[:movie_id])
 		@ratings = MoviesUser.find_by_movie_id(params[:movie_id])
-		
+		@reviews = MoviesUser.all
 		render("show")
-	end
-
-validate :has_not_rated
-	def has_not_rated
-	  reviewed = exists.where(user_id: params[:user_id]).where(movie_id: params[:movie_id])
 	end
 end

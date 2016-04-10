@@ -7,4 +7,6 @@ module MoviesHelper
 			"#{@movies.size}"+" movies"
 		end
 	end
+
+
 end
