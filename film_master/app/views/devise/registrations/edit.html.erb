@@ -1,8 +1,17 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="edit-block">
+<h1>Edit <%= resource_name.to_s.humanize %> Info</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+<div class="field">
+    <%= f.label "First name" %><br />
+    <%= f.text_field :fName%>
+    </div>
+  <div class="field">
+    <%= f.label "Last name" %><br />
+    <%= f.text_field :lName%>
+  </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -27,10 +36,24 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+    <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city%>
+  </div>
+   <div class="field">
+    <%= f.label :province %><br />
+    <%= f.text_field :province%>
+  </div>
+   <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country%>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
 <% end %>
 
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", "history.back()" %>
+</div>

@@ -15,18 +15,20 @@
 		<nav>
 		<ul>
 			<li class="logo"><a href="/home"><img src="/assets/filmwhite-01.png" height="40" width="145"></a></li>
-			<div class="right">
+			<li ><a class="center-me" href="/movies"> Browse</a></li>
 
+			<div class="right">
 
 			<li class="search"><%= form_tag(movies_path,:method => "get", id: "search-form") do %>
 			<%= text_field_tag :search, params[:search], placeholder: "Search Movies" %>
-			<%= submit_tag "Search" %>
-			<%= link_to "Advanced Search", new_search_path %>
+			<%= submit_tag "Search" %></li>
+			<li class="advanced"><%= link_to "Advanced Search", new_search_path %>
 			<% end %></li>
 
 			<% if user_signed_in? %>
 				
-				<li class="user"> Hey <%= current_user.fName  %>!
+				<li  class="user"> Hey <%= current_user.fName  %>!
+				<div class="triangle"></div>
 					<div class="user-menu">
 						
 						<a href="/profiles/<%= current_user.user_id %>">Profile</a>
