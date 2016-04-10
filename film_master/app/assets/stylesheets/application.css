@@ -53,13 +53,14 @@
  .header nav a{
     display: block;
     padding: 20px 16px;
-    color: #FFFFFF;
+       color: #FFFFFF;
     text-decoration: none;
     font-family: Abel, 'sans-serif';
 }
 .logo{
 	height:80px;
 }
+
 .right .sign-in{
 	padding: 0px;
 }

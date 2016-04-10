@@ -15,8 +15,9 @@
 		<nav>
 		<ul>
 			<li class="logo"><a href="/home"><img src="/assets/filmwhite-01.png" height="40" width="145"></a></li>
-			<div class="right">
+			<li><a href="/movies">Movies</a></li>
 
+			<div class="right">
 
 			<li class="search"><%= form_tag(movies_path,:method => "get", id: "search-form") do %>
 			<%= text_field_tag :search, params[:search], placeholder: "Search Movies" %>
