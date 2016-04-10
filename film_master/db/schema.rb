@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409234662) do
+ActiveRecord::Schema.define(version: 20160410082549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160409234662) do
   add_index "directors_movies", ["movie_id"], name: "index_directors_movies_on_movie_id", using: :btree
 
   create_table "genres", primary_key: "genre_id", force: :cascade do |t|
-    t.string "gName", limit: 20
+    t.string "gName", limit: 20, null: false
   end
 
   create_table "genres_movies", id: false, force: :cascade do |t|
@@ -106,6 +106,13 @@ ActiveRecord::Schema.define(version: 20160409234662) do
   create_table "roles", primary_key: "role_id", force: :cascade do |t|
     t.string  "rName",    limit: 30, null: false
     t.integer "actor_id"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string   "keywords"
+    t.string   "gName"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "studios", primary_key: "studio_id", force: :cascade do |t|

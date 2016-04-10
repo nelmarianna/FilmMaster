@@ -1,16 +1,15 @@
   <%= stylesheet_link_tag    'movie', media: 'all', 'data-turbolinks-track' => true %>
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-
-
+<div class="display">
 <h4> Displaying <%= num_movies %>   </h4>
-
+</div>
 
 			<% if @movies.present? %>
 			  <%= render @movies %>
 			<% else %>
 			  <p>There are no movies containing the term(s) <%= params[:search] %>.</p>
 			<% end %>
-
+<div class="movielist">
 <ul>
 <% @movies.each do |movie| %>
 		
@@ -19,8 +18,8 @@
 	
 		<h2> <%= movie.m_name %> </h2></li>
 	</div>
-	<!-- 	<a href = "/blog_posts/#{blog_post.id}/edit"> Edit blog post</a> 
-		<a href = "/blog_posts/#{blog_post.id}" data-method="delete"> Delete blog post </a>-->
-	<% end %>
+
+<% end %>
 
 </ul>
+</div>
