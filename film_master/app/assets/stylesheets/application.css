@@ -45,7 +45,7 @@
 /*.header nav li{
 	float: left;
 }*/
-.right li .search{
+.right li{
 	padding: 20px 20px;
 }
 
@@ -59,6 +59,9 @@
 }
 .logo{
 	height:80px;
+}
+.right .sign-in{
+	padding: 0px;
 }
 
 li .user-menu{

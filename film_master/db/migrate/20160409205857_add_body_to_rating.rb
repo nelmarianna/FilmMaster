@@ -1,5 +1,5 @@
 class AddBodyToRating < ActiveRecord::Migration
-  def change
+  def add
   	# change_column :movies_users, :body, :string
   end
 end

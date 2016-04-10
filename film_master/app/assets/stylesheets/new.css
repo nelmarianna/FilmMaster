@@ -1,5 +1,5 @@
 
-body{
+body.new{
 	background-image: url("/assets/sign.jpg");
 	 background-size: cover;
     background-repeat: no-repeat;
