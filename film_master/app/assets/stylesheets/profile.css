@@ -1,9 +1,11 @@
 
 .profile_page{
 	background-color: #BBBBBB;
-	margin:0px 50px 0px 50px;
-	padding: 15px;
-	position: fixed;
+	padding: 20px 50px;
+	margin:0px auto;
+	width:60%;
+	height:800px;
+
 	
 }
 
@@ -11,4 +13,36 @@
 	background-color: #FFFFFF;
 	border-radius:5px;
 	padding:15px;
+	float:right;
+	color:#BBBBBB;
+	width:70%;
+}
+
+.profile_page h1{
+	font-family: Abel;
+	font-size: 50px;
+	font-weight: bold;
+	color:black;
+}
+
+.profile_info p{
+	font-family: Abel;
+	color:#555555;
+	font-size:30px;
+}
+.profile_info a{
+	font-family: Abel;
+	color:rgb(50, 101, 152);
+	font-size:30px;
+	float: right;
+	text-decoration: none;
+}
+.profile_info a:hover{
+	text-decoration: underline;
+}
+.heading{
+	font-family: Abel;
+	color:rgb(0, 51, 102);
+	font-size:30px;
+	float:left;
 }
