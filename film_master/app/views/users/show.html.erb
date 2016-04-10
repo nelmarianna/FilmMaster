@@ -1,0 +1,15 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
+</head>
+<div class="profile_page">
+
+<h3><%= full_name %></h3>
+<div class="profile_info">
+<p>email: <%= @users.email %></p>
+<p>password: ********* </p>
+<a href="/users/edit">edit account info</a>
+</div>
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", destroy_user_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>

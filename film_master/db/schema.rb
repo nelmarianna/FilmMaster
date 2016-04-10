@@ -12,7 +12,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+
+ActiveRecord::Schema.define(version: 20160407163258) do
+=======
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160409234640) do
+>>>>>>> upstream/master
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +46,9 @@ ActiveRecord::Schema.define(version: 20160409234640) do
   add_index "directors_movies", ["movie_id"], name: "index_directors_movies_on_movie_id", using: :btree
 
   create_table "genres", primary_key: "genre_id", force: :cascade do |t|
+
     t.string "gName"
+
   end
 
   create_table "genres_movies", id: false, force: :cascade do |t|
@@ -97,13 +105,11 @@ ActiveRecord::Schema.define(version: 20160409234640) do
   add_index "movies_users", ["user_id"], name: "index_movies_users_on_user_id", using: :btree
 
   create_table "profiles", primary_key: "profile_id", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.string   "gender"
-    t.string   "language"
-    t.date     "birthday"
-    t.integer  "ageRange"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "user_id",  null: false
+    t.string  "gender"
+    t.string  "language"
+    t.date    "birthday"
+    t.integer "ageRange"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
