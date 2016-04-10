@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
 
 	def index
 		@movies = Movie.all
+		@mg = MoviesGenre.find_by_movie_id(params[:movie_id])
 		if params[:search]
    			 @movies = Movie.search(params[:search])
 		  else
