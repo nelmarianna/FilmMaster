@@ -1,4 +1,5 @@
 class Genre < ActiveRecord::Base
 
-belongs_to :movie
+has_many :genresMovies
+has_many :movies, :through => :genresMovies
 end

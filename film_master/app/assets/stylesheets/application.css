@@ -14,7 +14,8 @@
  *= require_self
  */
  body{
- 	margin:0px;
+ 	margin: auto;
+ 	background-color: black;
  }
 .header {
 	/*background-color: #476e9e;*/

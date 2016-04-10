@@ -11,8 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 
 ActiveRecord::Schema.define(version: 20160407163258) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20160409234640) do
+>>>>>>> upstream/master
 
 
   # These are extensions that must be enabled in order to support this database
@@ -89,10 +94,11 @@ ActiveRecord::Schema.define(version: 20160407163258) do
   add_index "movies_studios", ["movie_id"], name: "index_movies_studios_on_movie_id", using: :btree
   add_index "movies_studios", ["studio_id"], name: "index_movies_studios_on_studio_id", using: :btree
 
-  create_table "movies_users", primary_key: "rating_id", force: :cascade do |t|
+  create_table "movies_users", id: false, force: :cascade do |t|
     t.integer "user_id",  null: false
     t.integer "movie_id", null: false
     t.integer "rating",   null: false
+    t.string  "body"
   end
 
   add_index "movies_users", ["movie_id"], name: "index_movies_users_on_movie_id", using: :btree
