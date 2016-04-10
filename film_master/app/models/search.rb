@@ -5,7 +5,7 @@ class Search < ActiveRecord::Base
 		movies = Movie.all 
 	#	mg= MoviesGenre.all
 		genre = Genre.all 
-		movies = movies.where(["name ILIKE ?", "%#{keywords}%"]) if keywords.present?
+		movies = movies.where(["m_name ILIKE ?", "%#{keywords}%"]) if keywords.present?
 		#movies = movies.where(["gName ILIKE ?", gName]) if gName.present?
 		movies = movies.joins(:genres).where(["genre.gName ILIKE ?", gName]) if gName.present?
 
