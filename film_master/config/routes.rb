@@ -17,12 +17,7 @@ Rails.application.routes.draw do
 	get "profiles/:profile_id/edit-profile" => "profiles#edit", as: :edit
 	patch "/profiles/:profile_id" => "profiles#update"
 
-	#create page to show all movies
-	get "/movies" => "movies#index"
-	get "/movies/:movie_id" => "movies#show", as: :movie
-
-<<<<<<< HEAD
-=======
+	
 #create page to show all movies
 get "/movies" => "movies#index"
 get "/movies/:movie_id" => "movies#show", as: :movie
@@ -38,5 +33,4 @@ post "/movies_users/:movie_id/:user_id/new" => "movies_users#create"
 patch "/movies_users/:movie_id/:user_id" => "movies_users#update"
 delete "/movies_users/:movie_id/:user_id" => "movies_users#destroy"
 
->>>>>>> upstream/master
 end
