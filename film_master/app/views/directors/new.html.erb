@@ -1,15 +1,17 @@
-<%= form_for (@director) do |f| %>
+	<p class="headings"> Add New Director</p>
 
+
+<%= form_for (@director) do |f| %>
 	<div>
-	<%= f.label :new_director_first_name %></p><br />
-	<%= f.text_area :fName  %>
+	<p class="headings"><%= f.label :first_name %></p><br />
+	<%= f.text_field :fName , :class => "moviename" %>
 	</div>
 	<div>
-	<%= f.label :new_director_last_name %></p><br />
-	<%= f.text_area :lName  %>
+	<p class="headings"><%= f.label :last_name %></p><br />
+	<%= f.text_field :lName, :class => "moviename2"  %>
 	</div>
-	<div>
-	<%= f.submit 'Create Director'%>
+	<div class="buttonposition4">
+	<%= f.submit 'Create Director', :class => "button4"%>
 	</div>
 
 <% end %>
