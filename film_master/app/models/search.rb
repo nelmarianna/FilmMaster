@@ -11,6 +11,4 @@ class Search < ActiveRecord::Base
 
 		return movies
 	end
-
-
 end
