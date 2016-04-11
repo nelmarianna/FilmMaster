@@ -7,11 +7,6 @@ class Movie < ActiveRecord::Base
 	
 	end
 
-	 def average_rating
-	    sum = moviesUsers.group('movie_id').sum(:rating) 
-	    a = sum.extract!(:sum)
-	 end
-
 
 has_many :genresMovies
 has_many :genres, :through  => :genresMovies

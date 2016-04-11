@@ -14,7 +14,9 @@
     background-repeat: no-repeat;
 }
 #itemTwo{
-	background-color: navy;
+	/* background-image: url("movieDetails/@movies.movie_id}.jpg"); */
+
+	 background-color: transparent;
 }
 #contentContainer {
      width: 1000px;
@@ -118,6 +120,7 @@ li{
 }
 h2{
 	color: silver;
+
 }
 .movieContent .inner-right{
 	float: right;
@@ -138,6 +141,10 @@ h2{
 	color: #d1e0e0;
 	font-size: 24px;
 }
+ .movie-left h3{
+	color: gold;
+	font-family: 'Abel', sans-serif;
+}
 .movieContent .movie-right p{
 	font-size: 30px;
 	color: silver;
@@ -146,27 +153,37 @@ h2{
 }
 .movieContent .inner-left h3, .movieContent .inner-right h3{
 	text-align: left;
+	text-decoration: underline;
 	font-size: 20px;
 	font-family: 'Abel', sans-serif;
-	color: #00394d;
+	color: #c2c2d6;
 }
 .movieContent .inner-left li, .movieContent  .inner-right li{
 	text-decoration: none;
 	display: block;
-	color: brown;
+	color: #adebeb;
+	font-family: 'Abel', sans-serif;
+	float: none;
 }
- .movieContent .inner-right span{
+ .movieContent .inner-right span,.movieContent .inner-left span{
  	font-family: 'Abel', sans-serif;
  	font-size: 16px;
-	color: pink;
+	color: #adebeb;
 }
-
- .movie-clear p{
-	font-size: 16px;
-	color: pink;
-	margin-left: 20px;
+.review-body{
+	width: 400px;
 }
-
+ .movie-clear .review-body p{
+	font-size: 17px;
+	color: #adebeb;
+	font-family: 'Abel', sans-serif;
+	margin-left: 60px;
+}
+.movie-clear h4{
+	color: gold;
+	margin-left: 60px;
+	font-family: 'Abel', sans-serif;
+}
   .movie-clear a, .movieContent  a{
 	float: right;
 	text-decoration: none;
@@ -178,4 +195,8 @@ h2{
 
   .movie-clear a:hover, .movieContent  a:hover{
 	color: #9fbfdf;
+}
+.movie-clear h2{
+	color: silver;
+	margin-left: 15px;
 }

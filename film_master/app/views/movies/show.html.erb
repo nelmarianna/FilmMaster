@@ -6,7 +6,7 @@
 </div>
 <div class="movie-left">
 	 <%= image_tag "movieImages/#{@movies.movie_id}.jpg", :class=>"movieImg"%> 
-	<h3>Overall avg <%= @movies.average_rating %></h3>
+	<h3>Overall movie rating:   <%= @overall %></h3>
 
 </div>
 <div id="contentContainer">
@@ -21,6 +21,7 @@
 	</div>
 </div>
 <div id="itemTwo" class="movieContent">
+
 	 <div class="inner-left">
 	 <ul>
 		<h3>Genres: </h3>
@@ -29,20 +30,24 @@
 		 <li> <%= genre.gName %></li>
 		<% end %>
 	</ul>
-		</br>
+	<ul>	
 		 <h3>  Movie Actors: </h3>
 		<!-- Get actors in movie-->
 		<% @movies.roles.each do |role| %>
-		 <li> <%= role.actor.fName %> <%= role.actor.lName %> plays <%= role.rName %></li>
+		 <li> <%= role.actor.fName %> <%= role.actor.lName %> who plays <%= role.rName %></li>
 		<% end %>
+	</ul>
+	<ul>
+		<h3> Movie Language:</h3><span> <%= @movies.language %> </span>
+	</ul>
 	</div>
  	<div class="inner-right">
-		 <h3>  Movie duration: <span><%= @movies.duration %> minutes</span> </h3>
-		<h3> Movie Language:<span> <%= @movies.language %> </span></h3>
-		<h3>  Maturity Level:<span> <%= @movies.maturity_level %></span> </h3>
+		 <h3>  Movie duration: </h3><span><%= @movies.duration %> minutes</span> 
+		<h3>  Maturity Level:</h3> <span> <%= @movies.maturity_level %></span>
 
 
 		</br>
+
 		<h3>  Studio(s): </h3>
 		<!-- Get studio that made movie-->
 		<% @movies.studios.each do |studio| %>
@@ -76,26 +81,29 @@
 
 <div class="movie-clear">
 
-
-<% if @movies.users.size > 0 %>
-	<h2>Movie reviews</h2>
-	<% @movies.moviesUsers.each do |user| %>
-	 	<p><%= user.user_fName %>  <%= user.user_lName %> -- Rated : <%= user.rating %> / 10</p>
-		 <p><%= user.body %></p>
-	<% end %>
-<% else %>
-	  <p>No users have reviewed this movie.</p>
-<% end %>
-<%= @e %>
-<%= params.inspect %>
 <!-- this code allows a user to write/edit/destroy their review' -->
-	<% if @e %>
+	<% if @notReviewed %>
 		<%= link_to 'Write a review', movies_users_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id) %>
 			
 	<% else %>
 		<%= link_to 'Edit review', movies_users_edit_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id ) %>
 			<a href = "/movies_users/:movie_id/:user_id" data-method="delete"> Delete review </a>
-		<% end %>
+	<% end %>
+
+
+<% if @movies.users.size > 0 %>
+	<h2>Movie reviews</h2>
+	<% @movies.moviesUsers.each do |user| %>
+	 	<h4><%= user.user_fName %>  <%= user.user_lName %> -- Rated : <%= user.rating %> / 10</h4>
+	 	<div class="review-body">
+		 <p><%= user.body %></p>
+		 </div>
+	<% end %>
+<% else %>
+	  <p>No users have reviewed this movie.</p>
+<% end %>
+
+
 
 	<p> rate movie</p>
 	<p> this requies update restfulres to update movies overallR, userMoviesRated, users_movie</p>
