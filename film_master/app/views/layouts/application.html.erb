@@ -15,7 +15,10 @@
 		<nav>
 		<ul>
 			<li class="logo"><a href="/home"><img src="/assets/filmwhite-01.png" height="40" width="145"></a></li>
+			
+			<% if user_signed_in? %>
 			<li ><a class="center-me" href="/movies"> Browse</a></li>
+			<% end %>
 
 			<div class="right">
 
