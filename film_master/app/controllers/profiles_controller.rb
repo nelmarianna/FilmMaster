@@ -26,10 +26,23 @@ class ProfilesController < ApplicationController
 			render ("edit")
 		end
 	end
-  # def create
-  #   @profiles = Profile.new(profile_params)
-  #   @profiles.user_id = current_user.id
-  #   @profiles.save
-  #   respond_with(@profiles)
-  # end
+
+	def new
+
+		@profiles = Profile.new
+		render("new")
+
+	end
+	def create
+
+		profile_params = params.require(:profile).permit(:profile_id, :user_id, :gender,:birthday,:language)
+		@profiles = Profile.new(profile_params)
+
+		if @profiles.update(profile_params)
+			redirect_to "/profiles/#{@profiles.profile_id}" 
+		else
+			render ("new")
+		end
+	end
+  
 end
