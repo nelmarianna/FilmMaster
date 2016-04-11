@@ -36,6 +36,11 @@ Rails.application.routes.draw do
 
 	get "/genres" => "genres#index"
 	get "/genres/new" => "genres#new", :as => :genre
+	post "/genres" => "genres#create"
+
+	get "/directors" => "directors#index"
+	get "/directors/new" => "directors#new", :as => :director
+	post "/directors" => "directors#create"
 
 	#ratings page
 	get "/movies_users/:movie_id/:user_id" => "movies_user#index"
