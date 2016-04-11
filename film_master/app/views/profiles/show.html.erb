@@ -14,7 +14,7 @@
 			<p> Gender:  <%= @profiles.gender %> </p>
 			<p>Birthday: <%= @profiles.birthday %> </p>
 			<p>Language: <%= @profiles.language %> </p>
-			<a href="/profiles/<%= @profiles.profile_id %>/edit-profile">Edit Profile</a>
+			<a href="/profiles/<%= @profiles.profile_id %>/edit">Edit Profile</a>
 		</div>
 
 </div>
@@ -26,9 +26,10 @@
 		<div class="favourite_info">
 		<!-- genres here -->
 		<p>Favourite Genres</p>
-		
+
 		<% @genres.each do |g|%>
 		<p><%= g.genre_gName %></p>
+
 		<%end%>
 		
 			<a href="/genres_profiles/<%= @profiles.profile_id %>/new">Add Favourites to Your Profile!</a>
