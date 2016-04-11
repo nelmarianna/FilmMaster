@@ -6,6 +6,14 @@ class ProfilesController < ApplicationController
   	@users = User.find(@profiles.user_id)
   	@genres = GenresProfile.where(:profile_id => params[:profile_id])
   	
+  	@g_names=[]
+  	@genres.each do |fav|
+  		@g_names << Genre.select(:gName).where(:genre_id => fav.genre_id).to_s
+  	end
+  	@omg = @g_names[:gName]
+  	@merp = @g_names.empty?
+  	@ga = GenresProfile.select(:genre_id).where(:profile_id => params[:profile_id])
+  	@wo = Genre.where(genre_id: @ga).pluck(:gName)
   	#@gID= @genres.select(:genre_id)
   	#@gName = Genre.select(:gName).where(:genre_id => @gID)
   	#Genre.select(:gName).where(Genre.movie_id: params[:movie_id], :user_id => current_user.user_id).to_a
