@@ -47,8 +47,7 @@ ActiveRecord::Schema.define(version: 20160409234662) do
   add_index "directors_movies", ["movie_id"], name: "index_directors_movies_on_movie_id", using: :btree
 
   create_table "genres", primary_key: "genre_id", force: :cascade do |t|
-
-    t.string "gName", limit: 20
+    t.string "gName"
   end
 
   create_table "genres_movies", id: false, force: :cascade do |t|
