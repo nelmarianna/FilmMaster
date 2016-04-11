@@ -1,0 +1,15 @@
+<div class="edit-block">
+<h1>Edit Favourite Genres</h1>
+	<p>Choose 5 genres from our list:</p>
+	<%= form_for(@fav_genres) do |f| %>
+	<div class="field">
+		<% @genres.each do |item| %>
+			<%= f.check_box :genre_id  %>
+		    <%= f.label item.gName %> </br>
+		<%end %>
+	</div>
+	<%= f.submit "Save" %>
+
+	<%end %>
+
+</div>
