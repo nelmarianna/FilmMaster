@@ -19,7 +19,22 @@
 	font-size:35px;
 	text-align: center;
 }
+.ratingbox{
+	font-size: 15px;
+	position:absolute;left:30%;top:34%;
+	width: 15px;
+    height: 10px;
 
+    box-sizing: border-box;
+}
+.ratingbox2{
+	font-size: 15px;
+	position:absolute;left:33%;top:40%;
+	width: 15px;
+    height: 10px;
+
+    box-sizing: border-box;
+}
 .ratingupd{
 font-family: Abel;
 	color: gold;
@@ -28,7 +43,7 @@ font-family: Abel;
 	padding:0px;
 }
 .textarea {
-    width: 100%;
+    width: 575px;
     height: 150px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -38,6 +53,22 @@ font-family: Abel;
     font-family:  'Abel', sans-serif;
     padding: 0 10px 0 10px;
     outline: gold;
+
+	position:absolute;left:40%;top:52%;
+}
+.textarea2 {
+    width: 575px;
+    height: 150px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-family:  'Abel', sans-serif;
+    padding: 0 10px 0 10px;
+    outline: gold;
+
+	position:absolute;left:33%;top:60%;
 }
 .button3 {
     width: 300px;
@@ -61,8 +92,5 @@ font-family: Abel;
     border: 1px solid #003366;
 }
 .buttonposition2{
-	 position:absolute;right:38%;top:90%;
-}
-.textarea input:active, .textarea input:focus {
-    border: 1px solid #002851;
+	 position:absolute;right:15%;top:85%;
 }
