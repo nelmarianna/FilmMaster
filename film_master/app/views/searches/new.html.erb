@@ -1,18 +1,18 @@
-<h3>Advanced Search</h3>
+<%= stylesheet_link_tag "/advancedsearch.css" %>
+<p class="headings">Advanced Search</p>
 
 <%= form_for @search do |f| %>
-	<div>
-	<h2><%= f.label :search_by_movie%></h2>
+	<div class="positionthis">
+	<p class="otherwords"><%= f.label :search_by_movie%></p>
 	<br />
-	<%= f.text_field :keywords %>
-	</div>
-	<div>
-<h2>	<%= f.label :search_by_genre %></h2><br />
-	<%= f.select :gName, options_for_select(@genres), :include_blank => true %>
-	</div>
-	<div>
-	<%= f.submit 'Search'%>
-	</div>
+	 <%= f.text_field :keywords, :class =>"moviename" %>
+	
+<p class="otherwords2"><%= f.label :search_by_genre %></p><br />
+	<div class="genredrop"><%= f.select :gName, options_for_select(@genres), :include_blank => true%></div>
+
+<div class="buttonposition4">
+	<%= f.submit 'Search', :class => "button4"%>
+	</div></div>
 <% end %>
 
-<p> <%= link_to 'Back', movies_path %></p>
+<p class = "moveme"> <%= link_to 'Back', movies_path %></p>
