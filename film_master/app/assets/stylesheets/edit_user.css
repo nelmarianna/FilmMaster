@@ -1,0 +1,42 @@
+.edit-block {
+
+    width: 350px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    border: 5px solid #325b84;
+    margin: 100px auto ;
+}
+
+.edit-block h1 {
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.edit-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family:  'Abel', sans-serif;
+    padding: 0 20px 0 50px;
+    outline: none;
+}
+.fontforinput{
+    font-size: 18px;
+    font-family:  'Abel', sans-serif;
+}
+.field{
+    font-family:  'Abel', sans-serif;
+    margin:10px 0px;
+}
+p{
+    font-size: 18px;
+    font-family:  'Abel', sans-serif;
+}

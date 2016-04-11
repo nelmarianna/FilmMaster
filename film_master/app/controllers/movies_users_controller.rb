@@ -35,8 +35,10 @@ class MoviesUsersController < ApplicationController
 	end
 
 	def destroy
-		@rating = MoviesUser.find(params[:movie_id,:user_id])
-		@rating.destroy
+		@rating = MoviesUser.find( params[:rating_id]) #where(movie_id: params[:movie_id], :user_id => current_user.id)
+		#MoviesUser.find_by_movie_id_and_user_id(params[:movie_id],params[:user_id])
+		@rating.destroy #(params[:rating_id])
 		redirect_to  "/movies/#{@rating.movie_id}" 
 	end
+
 end

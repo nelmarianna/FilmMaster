@@ -1,8 +1,9 @@
-  <%= stylesheet_link_tag    'movie', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag "/editreview.css" %>
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
-<h1> Edit my review for <%= @movie.m_name %></h1>
 
+<div class="editreviewpage">
+<p class="heading1"> Edit my review for <%= @movie.m_name %></p>
 
 <%= form_for @rating, url: movies_users_edit_path do |f| %>
 	<div>
@@ -10,15 +11,15 @@
 	<%= f.hidden_field :user_id, :value => params[:user_id] %>
 	<%= f.hidden_field :rating_id, :value => params[:user_id] + params[:movie_id] %>
 
-	<h2><%= f.label :updated_rating_for_movie%></h2>
+	<p class="ratingupd"><%= f.label :updated_rating_for_movie%></p>
 	<br />
 	<%= f.number_field :rating, {:min => 0, :max => 10} %>
 	</div>
 	<div>
-<h2>	<%= f.label :updated_review %></h2><br />
-	<%= f.text_area :body %>
+<p class="ratingupd">	<%= f.label :updated_review %></p><br />
+	<%= f.text_area :body, :class =>"textarea" %>
 	</div>
 	<div>
 	<%= f.submit 'Update Review'%>
-	</div>
+	</div></div>
 <% end %>

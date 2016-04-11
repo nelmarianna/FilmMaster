@@ -5,11 +5,12 @@ body.signup{
     background-position: 0px 80px;
      overflow-y: hidden;
 }
+
 .login-block2{
   margin-left: auto ;
   margin-right: auto ;
 	padding-top: 5px;
-    width: 480px;
+    width: 450px;
     padding: 10px;
     background: #fff;
     border-radius: 3px;
@@ -38,8 +39,12 @@ body.signup{
     margin-bottom: 10px;
     font-size: 16px;
     font-family:  'Abel', sans-serif;
-    padding: 0 20px 0 50px;
+    padding: 0 10px 0 20px;
     outline: none;
+}
+
+.login-block2 input:active, .login-block2 input:focus {
+    border: 1px solid #002851;
 }
 
 .font{

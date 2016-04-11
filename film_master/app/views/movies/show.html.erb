@@ -1,76 +1,178 @@
   <%= stylesheet_link_tag    'movie', media: 'all', 'data-turbolinks-track' => true %>
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
+<div class="title">
+<h1> <%= @movies.m_name %> <span class="date">( <%= @movies.date_released %> )</span></h1>
+</div>
+<div class="movie-left">
+	 <%= image_tag "movieImages/#{@movies.movie_id}.jpg", :class=>"movieImg"%> 
+	<h3>Overall movie rating:   <%= @overall %></h3>
 
-<h1> <%= @movies.m_name %> </h1>
+</div>
+<div id="contentContainer">
+<div id= "wrapper">
 
-<div class="left">
- <%= image_tag "movieImages/#{@movies.movie_id}.jpg", :class=>"movieImg"%> 
-</div>	
-<div class="right">
-<h3> Summary </h3>
- <p><%= @movies.summary %></p>
-<h3> Movie Language: <%= @movies.language %> </h3>
-<h3>  Maturity Level: <%= @movies.maturity_level %> </h3>
-<h3>  Date released: <%= @movies.date_released %> </h3>
-<h3>  Movie duration: <%= @movies.duration %> minutes </h3>
-</br>
-<h3>  Movie studio(s): </h3>
-<!-- Get studio that made movie-->
-<% @movies.studios.each do |studio| %>
- <li> <%= studio.studio_name %></li>
-<% end %>
+<div id="itemOne" class="movieContent">
+	
+	<div class="movie-right">
+	<a href="/movies", data-ftrans="slide"> Back to all movies </a>
+	</br>
+	 <p><%= @movies.summary %></p>
+	</div>
+</div>
+<div id="itemTwo" class="movieContent">
 
-</br>
+	 <div class="inner-left">
+	 <ul>
+		<h3>Genres: </h3>
+		<!-- Get genres related to the movie-->
+		<% @movies.genres.each do |genre| %>
+		 <li> <%= genre.gName %></li>
+		<% end %>
+	</ul>
+	<ul>	
+		 <h3>  Movie Actors: </h3>
+		<!-- Get actors in movie-->
+		<% @movies.roles.each do |role| %>
+		 <li> <%= role.actor.fName %> <%= role.actor.lName %> who plays <%= role.rName %></li>
+		<% end %>
+	</ul>
+	<ul>
+		<h3> Movie Language:</h3><span> <%= @movies.language %> </span>
+	</ul>
+	</div>
+ 	<div class="inner-right">
+		 <h3>  Movie duration: </h3><span><%= @movies.duration %> minutes</span> 
+		<h3>  Maturity Level:</h3> <span> <%= @movies.maturity_level %></span>
 
-<h3>  Movie Actor(s): </h3>
-<!-- Get actors in movie-->
-<% @movies.roles.each do |role| %>
- <li> <%= role.actor.fName %> <%= role.actor.lName %> plays <%= role.rName %></li>
-<% end %>
 
-</br>
+		</br>
 
-<h3>  Movie director(s): </h3>
-<!-- Get directors of the movie-->
-<% @movies.directors.each do |director| %>
- <li> <%= director.fName %> <%= director.lName %></li>
-<% end %>
+		<h3>  Studio(s): </h3>
+		<!-- Get studio that made movie-->
+		<% @movies.studios.each do |studio| %>
+		 <li> <%= studio.studio_name %></li>
+		<% end %>
 
-</br>
+		</br>
 
-<h3>  Movie genres: </h3>
-<!-- Get genres related to the movie-->
-<% @movies.genres.each do |genre| %>
- <li> <%= genre.gName %></li>
-<% end %>
+		<h3>  Director(s): </h3>
+		<!-- Get directors of the movie-->
+		<% @movies.directors.each do |director| %>
+		 <li> <%= director.fName %> <%= director.lName %></li>
+		<% end %>
+	</div>
+	
 
-</br>
 
 <!-- List all users and  their rating of the movie IF THEY EXIST-->
 
 
+
+	</div>
+</div>
+</div>
+<div id="navLinks">
+    <ul>
+    <li class="itemLinks" data-pos="0px"></li>
+        <li class="itemLinks" data-pos="-1000px"></li>
+    </ul>
 </div>
 
+<div class="movie-clear">
 
-<div class="clear">
+<!-- this code allows a user to write/edit/destroy their review' -->
+	<% if @notReviewed %>
+		<%= link_to 'Write a review', movies_users_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id) %>
+			
+	<% else %>
+		<%= link_to 'Edit review', movies_users_edit_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id ) %>
+			<a href = "/movies_users/:movie_id/:user_id" data-method="delete"> Delete review </a>
+	<% end %>
+
+
 <% if @movies.users.size > 0 %>
 	<h2>Movie reviews</h2>
-	<% @movies.users.each do |user| %>
-	 	<p><%= user.fName %> <%= user.lName %> -- Rated : <%= @ratings.rating %> / 10</p>
-		 <p><%= @ratings.body %></p>
+	<% @movies.moviesUsers.each do |user| %>
+	 	<h4><%= user.user_fName %>  <%= user.user_lName %> -- Rated : <%= user.rating %> / 10</h4>
+	 	<div class="review-body">
+		 <p><%= user.body %></p>
+		 </div>
 	<% end %>
 <% else %>
 	  <p>No users have reviewed this movie.</p>
 <% end %>
 
-if this user id AND movie id combination doesnt exist in table
-<%= link_to 'Write a review', movies_users_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id ) %>
-else
-<%= link_to 'Edit review', movies_users_edit_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id ) %>
-<a href = "/movies_users/:movie_id/:user_id" data-method="delete"> Delete review </a>
+
 
 	<p> rate movie</p>
 	<p> this requies update restfulres to update movies overallR, userMoviesRated, users_movie</p>
-</div>
+	</div>
 
+<script>
+ // just querying the DOM...like a boss!
+var links = document.querySelectorAll(".itemLinks");
+var wrapper = document.querySelector("#wrapper");
+ 
+// the activeLink provides a pointer to the currently displayed item
+var activeLink = 0;
+ 
+// setup the event listeners
+for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+    link.addEventListener('click', setClickedItem, false);
+ 
+    // identify the item for the activeLink
+    link.itemID = i;
+}
+ 
+// set first item as active
+links[activeLink].classList.add("active");
+ 
+function setClickedItem(e) {
+    removeActiveLinks();
+ 
+    var clickedLink = e.target;
+    activeLink = clickedLink.itemID;
+ 
+    changePosition(clickedLink);
+}
+ 
+function removeActiveLinks() {
+    for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+    }
+}
+ 
+// Handle changing the slider position as well as ensure
+// the correct link is highlighted as being active
+function changePosition(link) {
+    var position = link.getAttribute("data-pos");
+ 
+    var translateValue = "translate3d(" + position + ", 0px, 0)";
+    wrapper.style[transformProperty] = translateValue;
+ 
+    link.classList.add("active");
+}
+ 
+//
+// Dealing with Transforms
+//
+var transforms = ["transform",
+            "msTransform",
+            "webkitTransform",
+            "mozTransform",
+            "oTransform"];
+ 
+var transformProperty = getSupportedPropertyName(transforms);
+ 
+// vendor prefix management
+function getSupportedPropertyName(properties) {
+    for (var i = 0; i < properties.length; i++) {
+        if (typeof document.body.style[properties[i]] != "undefined") {
+            return properties[i];
+        }
+    }
+    return null;
+}
+</script>

@@ -1,0 +1,18 @@
+<h3> Search Results </h3>
+
+<% if @search.search_movies.empty? %>
+	<p> No movies found</p>
+<% else %>
+	<div class="movielist">
+		<ul>
+		<%= @search.search_movies.each do |m| %>
+		<div>
+		<li>	<a href = "/movies/<%= m.movie_id %>"> <%= image_tag "movieImages/#{m.movie_id}.jpg", :class=>"movieImg"%> </a>
+		
+			<h2> <%= m.m_name %> </h2></li>
+		</div>
+		<% end %>
+
+		</ul>
+	</div>
+<% end %>

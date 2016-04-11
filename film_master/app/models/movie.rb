@@ -7,6 +7,7 @@ class Movie < ActiveRecord::Base
 	
 	end
 
+
 has_many :genresMovies
 has_many :genres, :through  => :genresMovies
 
