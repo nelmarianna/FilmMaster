@@ -25,15 +25,18 @@
 		
 		<div class="favourite_info">
 		<!-- genres here -->
-		<p>filler stuff for now</p>
-		<p> Gender:  <%= @profiles.gender %> </p>
-			<p>Birthday: <%= @profiles.birthday %> </p>
-			<p>Language: <%= @profiles.language %> </p>
-			<a href="/profiles/<%= @profiles.profile_id %>/edit-profile">Edit Profile</a>
+		<p>Favourite Genres</p>
+		
+		<% @profiles.genresProfiles.each do |genre|%>
+		<p><%= genre.gName %></p>
+		<%end%>
+		
+			<a href="/genres_profiles/<%= @profiles.profile_id %>/new">Add Favourites to Your Profile!</a>
 
-		</div>
-	
+		
 	</div>
+	
+</div>
 
 
 

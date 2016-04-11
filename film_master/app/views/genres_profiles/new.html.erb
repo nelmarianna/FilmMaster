@@ -1,0 +1,20 @@
+
+
+<div class="edit-block">
+<h1>Add Favourite Genres</h1>
+	<p>Choose 5 genres from our list:</p>
+	<%= form_for(@fav_genres) do |f| %>
+	
+	<%= f.hidden_field :profile_id, :value => params[:profile_id] %> 
+
+	<div class="field">
+		<% @genres.each do |item| %>
+			<%= f.check_box :genre_id  %>
+		    <%= f.label item.gName %> </br>
+		<%end %>
+	</div>
+	<%= f.submit "Save" %>
+
+	<%end %>
+
+</div>
