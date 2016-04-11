@@ -9,6 +9,10 @@ class MoviesUser< ActiveRecord::Base
 	def user_lName
 		user.lName 
 	end
+
+	# def rating
+	# 	return movies_user.rating_id
+	# end
 	# def user_id
 	# 	user.user_id
 	# end

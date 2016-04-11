@@ -27,8 +27,8 @@
 		<!-- genres here -->
 		<p>Favourite Genres</p>
 		
-		<% @profiles.genresProfiles.each do |genre|%>
-		<p><%= genre.gName %></p>
+		<% @genres.each do |g|%>
+		<p><%= g.genre_gName %></p>
 		<%end%>
 		
 			<a href="/genres_profiles/<%= @profiles.profile_id %>/new">Add Favourites to Your Profile!</a>

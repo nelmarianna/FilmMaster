@@ -39,6 +39,6 @@ Rails.application.routes.draw do
 	post "/movies_users/:movie_id/:user_id/new" => "movies_users#create"
 
 	patch "/movies_users/:movie_id/:user_id/edit" => "movies_users#update"
-	delete "/movies_users/:movie_id/:user_id" => "movies_users#destroy"
+	delete "/movies_users/:movie_id/:rating_id" => "movies_users#destroy" , as: :destroy_rating
 
 end
