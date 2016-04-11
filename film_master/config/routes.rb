@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  	devise_for :users, :controllers => { registrations: 'registrations' }
+  	devise_for :users, :controllers => { registrations: 'registrations'}
   	match 'users/:id' => 'users#destroy', :via => :delete, :as => :destroy_user
   	
   	resources :users, :only => [:show]
@@ -8,14 +8,19 @@ Rails.application.routes.draw do
   	#root page
  	get "/home" => "pages#home"
 	root "pages#home"
+
 	
 	# users page 
 	get "/users/:user_id" => "users#show", as: :settings
 
 	#profile page and edits to profile
-	get "profiles/:profile_id" => "profiles#show", as: :profile
-	get "profiles/:profile_id/edit-profile" => "profiles#edit", as: :edit
+	get "/profiles" => "profiles#index"
+	get "/profiles/:user_id/new" => "profiles#new", as: :new_proflie
+	get "/profiles/:profile_id" => "profiles#show", as: :profile
+	get "/profiles/:profile_id/edit" => "profiles#edit", as: :edit
+	post "/profiles" => "profiles#create"
 	patch "/profiles/:profile_id" => "profiles#update"
+	
 
 	get "/genres_profiles" => "genres_profiles#index"
 	get "/genres_profiles/:profile_id/edit" => "genres_profiles#edit"
@@ -39,6 +44,6 @@ Rails.application.routes.draw do
 	post "/movies_users/:movie_id/:user_id/new" => "movies_users#create"
 
 	patch "/movies_users/:movie_id/:user_id/edit" => "movies_users#update"
-	delete "/movies_users/:movie_id/:user_id" => "movies_users#destroy"
+	delete "/movies_users/:movie_id/:rating_id" => "movies_users#destroy" , as: :destroy_rating
 
 end

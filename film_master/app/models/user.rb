@@ -11,4 +11,6 @@ has_many :moviesUsers
 has_many :movies, :through  => :moviesUsers
 
 
+
+
 end

@@ -4,5 +4,6 @@ class UsersController < ApplicationController
 		@users = User.find(current_user.user_id)
 	end
 
+
 	
 end

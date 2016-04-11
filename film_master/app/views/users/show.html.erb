@@ -16,13 +16,4 @@
 			<a href="/users/edit">edit account info</a>
 		</div>
 	</div>
-	<div class="cancel">
-
-		<p class="heading">Cancel Account</p>
-		<div class="cancellation">
-			<p>Unhappy?</p>
-			<p>
-			<p> <%= button_to "Cancel my account", destroy_user_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %></p>
-		</div>
-	</div>
-</div>
+	
