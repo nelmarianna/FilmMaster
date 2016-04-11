@@ -33,6 +33,10 @@ Rails.application.routes.draw do
 	get "/movies" => "movies#index"
 	get "/movies/:movie_id" => "movies#show", as: :movie
 
+
+	get "/genres" => "genres#index"
+	get "/genres/new" => "genres#new", :as => :genre
+
 	#ratings page
 	get "/movies_users/:movie_id/:user_id" => "movies_user#index"
 	get "/movies_users/:movie_id/:user_id/new" => "movies_users#new", :as => :movies_users
