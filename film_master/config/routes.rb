@@ -36,6 +36,11 @@ Rails.application.routes.draw do
 
 	get "/genres" => "genres#index"
 	get "/genres/new" => "genres#new", :as => :genre
+	post "/genres" => "genres#create"
+
+	get "/directors" => "directors#index"
+	get "/directors/new" => "directors#new", :as => :director
+	post "/directors" => "directors#create"
 
 	#ratings page
 	get "/movies_users/:movie_id/:user_id" => "movies_user#index"
@@ -49,5 +54,6 @@ Rails.application.routes.draw do
 
 	patch "/movies_users/:movie_id/:user_id/edit" => "movies_users#update"
 	delete "/movies_users/:movie_id/:rating_id" => "movies_users#destroy" , as: :destroy_rating
+
 
 end

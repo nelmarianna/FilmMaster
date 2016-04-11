@@ -13,13 +13,19 @@
 			<p>Province: <%= @users.province %></p>
 			<p>Country: <%= @users.country %></p>
 
-			<a href="/users/edit">edit account info</a>
+			<a href="/users/edit">Edit Account Info</a>
 		</div>
 
 		<div class="account_info">
 			<% if current_user.admin? %>
- 
-			<p> add genre</p>
+ 				<a href="/genres/new">Add New Genre</a></br>
+				
+			<%	end %>
+		</div>
+		<div class="account_info">
+			<% if current_user.admin? %>
+			<a href="/directors/new">Add New Director</a>
+				
 			<%	end %>
 		</div>
 	</div>

@@ -1,8 +1,9 @@
 .headings{
 	font-family: Abel;
 	color: white;
-	font-size:35px;
+	font-size:38px;
 	text-align: center;
+	margin-top: 10px;
 }
 .otherwords{
 font-family: Abel;
@@ -21,7 +22,7 @@ font-family: Abel;
 	.genredrop{
 		width: 300px;
     height: 40px;
-	position:absolute;right:32.75%;top:56%;
+	position:absolute;right:32%;top:56%;
 }
 	
 	.movebacklink{

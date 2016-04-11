@@ -1,0 +1,15 @@
+<%= form_for (@director) do |f| %>
+
+	<div>
+	<%= f.label :new_director_first_name %></p><br />
+	<%= f.text_area :fName  %>
+	</div>
+	<div>
+	<%= f.label :new_director_last_name %></p><br />
+	<%= f.text_area :lName  %>
+	</div>
+	<div>
+	<%= f.submit 'Create Director'%>
+	</div>
+
+<% end %>
