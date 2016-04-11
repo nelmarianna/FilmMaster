@@ -2,10 +2,10 @@
 <%= stylesheet_link_tag "/new.css" %>
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
-<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-</head>
-<body class="sign">
 
+</head>
+<body class="signin">
+</body>
 <!-- <div class="login-block">
     <h1>Sign In</h1>
     <input type="text" value="" placeholder="Username" id="username" />
@@ -27,18 +27,23 @@
   
 
   <% if devise_mapping.rememberable? -%>
-    
+    <div class= "remembermebox">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, :class => "remembermebox" %>
-   
+      <%= f.label :remember_me %>
+      </div>
+     <div class="totheright"> <a href="/users/sign_up">Forgot password?</a></div>
+      
   <% end -%>
 
 
-    <%= f.submit "Log in", :class => "button" %>
+    <%= f.submit "Login", :class => "button" %>
 
   
 <% end %> 
 </div>
-<%= render "devise/shared/links" %>
+<a href="/users/sign_up" class="myButton2">Sign Up!</a>
 
-</body>
+
+
+
+<% render "devise/shared/links" %>

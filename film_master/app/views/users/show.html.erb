@@ -15,5 +15,12 @@
 
 			<a href="/users/edit">edit account info</a>
 		</div>
+
+		<div class="account_info">
+			<% if current_user.admin? %>
+ 
+			<p> add genre</p>
+			<%	end %>
+		</div>
 	</div>
 	

@@ -6,11 +6,7 @@ h3{
 	padding-top: -10;
 
 }
-/*header, .full-width {
-  width: 100%;
-  background: #002E60;
-  padding-top: 0;
-}*/
+
 .wrap {
   width: 80%;
   max-width: 24em;
@@ -51,18 +47,14 @@ h3{
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
 	background-color:#476e9e;
 }
-.myButton:active {
-	position:relative;
-	top:1px;
-}
 
+
+.myButton {position:absolute;right:63%;top:52%;}
 .cover{
 	 display: block;
     margin-left: auto;
     margin-right: auto;
 }
-.myButton {position:absolute;right:60%;top:45%;}
-
 body.home{
 	background-image: url("/assets/cover3.jpg");
 	 background-size: cover;

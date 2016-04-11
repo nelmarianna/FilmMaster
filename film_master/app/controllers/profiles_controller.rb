@@ -7,10 +7,15 @@ class ProfilesController < ApplicationController
   	@genres = GenresProfile.where(:profile_id => params[:profile_id])
   	
   	@g_names=[]
-  	
+
   	@genres.each do |fav|
-  		@g_names = Genre.select(:gName).where(:genre_id => fav.genre_id)
+  		@g_names << Genre.select(:gName).where(:genre_id => fav.genre_id).to_a
   	end
+  #	@omg = '';
+  	#@omg = @g_names[:gName]
+  #	@merp = @g_names.empty?
+  #	@ga = GenresProfile.select(:genre_id).where(:profile_id => params[:profile_id])
+  #	@wo = Genre.where(genre_id: @ga).pluck(:gName)
 
   	#@gID= @genres.select(:genre_id)
   	#@gName = Genre.select(:gName).where(:genre_id => @gID)

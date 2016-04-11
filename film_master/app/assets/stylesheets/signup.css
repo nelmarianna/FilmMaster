@@ -1,0 +1,134 @@
+body.signup{
+	background-image: url("/assets/martian1.jpg") ;
+	 background-size: cover;
+	 background-repeat: no-repeat;
+    background-position: 0px 80px;
+     overflow-y: hidden;
+}
+
+.login-block2{
+  margin-left: auto ;
+  margin-right: auto ;
+	padding-top: 5px;
+    width: 475px;
+    height: 475px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 3px;
+    border: 5px solid #325b84;
+    margin: 100px;
+    margin-top: 120px;
+    margin-left: 70px;
+}
+
+.login-block2 h3 {
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family:  'Abel', sans-serif;
+}
+
+.login-block2 input {
+    width: 215px;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family:  'Abel', sans-serif;
+    padding: 0 10px 0 10px;
+    outline: none;
+}
+
+.login-block2 input:active, .login-block2 input:focus {
+    border: 1px solid #002851;
+}
+
+.font{
+	font-size: 18px;
+    font-family:  'Abel', sans-serif;
+}
+/*h3{
+	color: black;
+    font-family:  'Abel', sans-serif;
+}*/
+
+.button2 {
+    width: 215px;
+    height: 40px;
+    background: #002851;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #002851;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family:  'Abel', sans-serif;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+.button2:hover {
+    background: #003366;
+    border: 1px solid #003366;
+}
+
+.new-one {
+    position: relative;
+    display: inline-block;
+    margin-left: 250px;
+}
+
+.new-two {
+    position: absolute;
+    margin-left:15px;
+}
+.new-three {
+    position: absolute;
+    margin-left: 15px;
+}
+.new-four {
+   margin-top: 75px;
+    position: absolute;
+    margin-left: 15px;
+}
+.new-five {
+   margin-top: 75px;
+    position: relative;
+    display: inline-block;
+    margin-left: 250px;
+}
+.new-five {
+   margin-top: 75px;
+    position: relative;
+    display: inline-block;
+    margin-left: 250px;
+}
+
+.new-six {
+    position: absolute;
+    margin-left: 15px;
+}
+.new-seven {
+ position: relative;
+    display: inline-block;
+    margin-left: 250px;
+}
+
+.new-eight {
+    position: absolute;
+    margin-left:15px;
+}
+
+.buttonposition{
+	
+margin-top: 75px;
+position:absolute;left:15%;top:73%;
+}
