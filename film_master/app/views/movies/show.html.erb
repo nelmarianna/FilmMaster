@@ -1,18 +1,26 @@
   <%= stylesheet_link_tag    'movie', media: 'all', 'data-turbolinks-track' => true %>
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
-<div class = "movies">
+<div class="title">
 <h1> <%= @movies.m_name %> <span class="date">( <%= @movies.date_released %> )</span></h1>
-
+</div>
 <div class="movie-left">
- <%= image_tag "movieImages/#{@movies.movie_id}.jpg", :class=>"movieImg"%> 
-<h3>Overall avg <%= @movies.average_rating %></h3>
-</div>	
+	 <%= image_tag "movieImages/#{@movies.movie_id}.jpg", :class=>"movieImg"%> 
+	<h3>Overall avg <%= @movies.average_rating %></h3>
 
-<div class="movie-right">
-<a href="/movies"> Back to all movies </a>
- <p><%= @movies.summary %></p>
+</div>
+<div id="contentContainer">
+<div id= "wrapper">
 
+<div id="itemOne" class="movieContent">
+	
+	<div class="movie-right">
+	<a href="/movies", data-ftrans="slide"> Back to all movies </a>
+	</br>
+	 <p><%= @movies.summary %></p>
+	</div>
+</div>
+<div id="itemTwo" class="movieContent">
 	 <div class="inner-left">
 	 <ul>
 		<h3>Genres: </h3>
@@ -27,9 +35,8 @@
 		<% @movies.roles.each do |role| %>
 		 <li> <%= role.actor.fName %> <%= role.actor.lName %> plays <%= role.rName %></li>
 		<% end %>
-	 </div>
-	 <div class="inner-right">
-
+	</div>
+ 	<div class="inner-right">
 		 <h3>  Movie duration: <span><%= @movies.duration %> minutes</span> </h3>
 		<h3> Movie Language:<span> <%= @movies.language %> </span></h3>
 		<h3>  Maturity Level:<span> <%= @movies.maturity_level %></span> </h3>
@@ -49,17 +56,27 @@
 		<% @movies.directors.each do |director| %>
 		 <li> <%= director.fName %> <%= director.lName %></li>
 		<% end %>
-
 	</div>
+	
 
 
 <!-- List all users and  their rating of the movie IF THEY EXIST-->
 
 
+
+	</div>
+</div>
+</div>
+<div id="navLinks">
+    <ul>
+    <li class="itemLinks" data-pos="0px"></li>
+        <li class="itemLinks" data-pos="-1000px"></li>
+    </ul>
 </div>
 
-
 <div class="movie-clear">
+
+
 <% if @movies.users.size > 0 %>
 	<h2>Movie reviews</h2>
 	<% @movies.moviesUsers.each do |user| %>
@@ -69,17 +86,85 @@
 <% else %>
 	  <p>No users have reviewed this movie.</p>
 <% end %>
-
+<%= @e %>
+<%= params.inspect %>
 <!-- this code allows a user to write/edit/destroy their review' -->
-	<% if (@rating.nil? == false) && @rating.user_id == current_user.user_id && @rating.movie_id == @movies.movie_id %>
-			<%= link_to 'Edit review', movies_users_edit_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id ) %>
-			<a href = "/movies_users/:movie_id/:user_id" data-method="delete"> Delete review </a>
+	<% if @e %>
+		<%= link_to 'Write a review', movies_users_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id) %>
+			
 	<% else %>
-		<%= link_to 'Write a review', movies_users_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id ) %>
+		<%= link_to 'Edit review', movies_users_edit_path(:movie_id=>@movies.movie_id, :user_id => current_user.user_id ) %>
+			<a href = "/movies_users/:movie_id/:user_id" data-method="delete"> Delete review </a>
 		<% end %>
 
 	<p> rate movie</p>
 	<p> this requies update restfulres to update movies overallR, userMoviesRated, users_movie</p>
-</div>
+	</div>
 
-</div>
+<script>
+ // just querying the DOM...like a boss!
+var links = document.querySelectorAll(".itemLinks");
+var wrapper = document.querySelector("#wrapper");
+ 
+// the activeLink provides a pointer to the currently displayed item
+var activeLink = 0;
+ 
+// setup the event listeners
+for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+    link.addEventListener('click', setClickedItem, false);
+ 
+    // identify the item for the activeLink
+    link.itemID = i;
+}
+ 
+// set first item as active
+links[activeLink].classList.add("active");
+ 
+function setClickedItem(e) {
+    removeActiveLinks();
+ 
+    var clickedLink = e.target;
+    activeLink = clickedLink.itemID;
+ 
+    changePosition(clickedLink);
+}
+ 
+function removeActiveLinks() {
+    for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+    }
+}
+ 
+// Handle changing the slider position as well as ensure
+// the correct link is highlighted as being active
+function changePosition(link) {
+    var position = link.getAttribute("data-pos");
+ 
+    var translateValue = "translate3d(" + position + ", 0px, 0)";
+    wrapper.style[transformProperty] = translateValue;
+ 
+    link.classList.add("active");
+}
+ 
+//
+// Dealing with Transforms
+//
+var transforms = ["transform",
+            "msTransform",
+            "webkitTransform",
+            "mozTransform",
+            "oTransform"];
+ 
+var transformProperty = getSupportedPropertyName(transforms);
+ 
+// vendor prefix management
+function getSupportedPropertyName(properties) {
+    for (var i = 0; i < properties.length; i++) {
+        if (typeof document.body.style[properties[i]] != "undefined") {
+            return properties[i];
+        }
+    }
+    return null;
+}
+</script>
