@@ -56,10 +56,16 @@ padding-top: 100px;
 .remembermebox{
 	font-size: 18px;
     font-family:  'Abel', sans-serif;
+    position: absolute;left:13%;top:65.5%;
 	
 }
 
+.totheright{
+ 
+   font-family:  'Abel', sans-serif;
 
+position:absolute;left:27%;top:66%;
+}
 
 .login-block input:active, .login-block input:focus {
     border: 1px solid #002851;
@@ -126,13 +132,9 @@ input[type='checkbox'] {
     background:linear-gradient(to bottom, #1a4c8a 5%, #07265c 100%);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a4c8a', endColorstr='#07265c',GradientType=0);
     background-color:#1a4c8a;
-}/*
-.myButton2:active {
-    position:relative;
-    top:1px;
-}*/
+}
 
 
 
 
-.myButton2 {position:absolute;right:8%;top:50%;}
+.myButton2 {position:absolute;right:8%;top:47%;}

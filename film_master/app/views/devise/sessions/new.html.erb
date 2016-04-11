@@ -27,9 +27,11 @@
   
 
   <% if devise_mapping.rememberable? -%>
-    
+    <div class= "remembermebox">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, :class => "remembermebox" %>
+      <%= f.label :remember_me %>
+      </div>
+     <div class="totheright"> <a href="/users/sign_up">Forgot password?</a></div>
       
   <% end -%>
 
@@ -43,3 +45,5 @@
 
 
 
+
+<% render "devise/shared/links" %>

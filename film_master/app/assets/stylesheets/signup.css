@@ -10,7 +10,8 @@ body.signup{
   margin-left: auto ;
   margin-right: auto ;
 	padding-top: 5px;
-    width: 450px;
+    width: 475px;
+    height: 475px;
     padding: 10px;
     background: #fff;
     border-radius: 3px;
@@ -31,7 +32,7 @@ body.signup{
 }
 
 .login-block2 input {
-    width: 100%;
+    width: 215px;
     height: 42px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -39,7 +40,7 @@ body.signup{
     margin-bottom: 10px;
     font-size: 16px;
     font-family:  'Abel', sans-serif;
-    padding: 0 10px 0 20px;
+    padding: 0 10px 0 10px;
     outline: none;
 }
 
@@ -57,7 +58,7 @@ body.signup{
 }*/
 
 .button2 {
-    width: 100%;
+    width: 215px;
     height: 40px;
     background: #002851;
     box-sizing: border-box;
@@ -127,6 +128,7 @@ body.signup{
 }
 
 .buttonposition{
-	position: relative;
+	
 margin-top: 75px;
+position:absolute;left:15%;top:73%;
 }
