@@ -28,4 +28,8 @@ class MoviesController < ApplicationController
 		@movies.update(overall_rating: @overall)
 		render("show")
 	end
+
+
 end
+	end
+
