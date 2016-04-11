@@ -1,57 +1,62 @@
+<head>
+<%= stylesheet_link_tag "/signup.css" %>
 
-<h2>Sign up</h2>
+<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+</head>
+<body class="signup">
+</body>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+<div class="login-block2"> 
+<h3>SIGN UP</h3>
+<div class="new-two">
+    <%= f.label :first_name, :class => "font" %><br />
+    <%= f.text_field :fName,:class => "font", autofocus: true %>
+ </div>
+ <div class="new-one">
+    <%= f.label :last_name, :class => "font" %><br />
+    <%= f.text_field :lName, autofocus: true, :class => "font" %>
+    </div>
+ 
+<div class="new-three">
+    <%= f.label :email, :class => "font" %><br />
+    <%= f.email_field :email, autofocus: true, :class => "font", style: 'float: left; width: 273%; display: block' %>
+</div>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :fName, autofocus: true %>
-  </div>
-
-    <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :lName, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
+<div class="new-four">
+    <%= f.label :password, :class => "font" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", style: 'float: left; width: 93%; display: block' %>
+    </div>
+
+ <div class="new-five">
+    <%= f.label :password_confirmation, :class => "font" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "font" %>
+</div>
+
+ <div class="new-six">
+    <%= f.label :country, :class => "font"%><br />
+    <%= f.text_field :country, autofocus: true, :class => "font" %>
+</div>
+<div class="new-seven">
+    <%= f.label :city, :class => "font" %><br />
+    <%= f.text_field :city, autofocus: true, :class => "font" %>
+</div>
+
+<div class="new-eight">
+    <%= f.label :province, :class => "font" %><br />
+    <%= f.text_field :province, autofocus: true, :class => "font" %>
+</div>
+<div class="buttonposition">
+    <%= f.submit "Sign up!",:class => "button2" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
- <div class="field">
-    <%= f.label :country%><br />
-    <%= f.text_field :country, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city, autofocus: true %>
-  </div>
-
-   <div class="field">
-    <%= f.label :province %><br />
-    <%= f.text_field :province, autofocus: true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-
- 
+</div> 
 
 <% end %>
-
-<%= render "devise/shared/links" %>
+<!-- % render "devise/shared/links" %> , [['Hot','hot'],['Medium','medium'],['Cold','cold']]
+ -->
+ 
