@@ -55,4 +55,5 @@ Rails.application.routes.draw do
 	patch "/movies_users/:movie_id/:user_id/edit" => "movies_users#update"
 	delete "/movies_users/:movie_id/:rating_id" => "movies_users#destroy" , as: :destroy_rating
 
+
 end
