@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 	get "/genres_profiles/:profile_id" => "genres_profiles#show"
 
 	#create page to show all movies
-	get "/movies" => "movies#index"
+	get "/movies" => "movies#index", as: :movies
 	get "/movies/:movie_id" => "movies#show", as: :movie
 
 
