@@ -2,7 +2,11 @@
 
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
+<% if user_signed_in? %>
+<a href="/movies" class="myButton">View all Movies</a>
+<% else %>
+<a href="/users/sign_up" class="myButton">Sign Up Now</a>
+<%end%>
 
-<a href="/movies" class="myButton">View popular movies</a>
 <body class="home">
 </body>
