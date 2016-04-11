@@ -1,41 +1,21 @@
-<head>
-<link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
-</head>
+
+<%= stylesheet_link_tag "/profile.css" %>
+<body class="profileshow"></body>
 <div class="profile_page">
 
 	<h1><%= full_name %></h1>
 
 <div class="profile">
-		<p class="heading">
-		My Profile
-		</p>
+		
 		
 		<div class="profile_info">
+		<h2>My Profile</h2>
 			<p> Gender:  <%= @profiles.gender %> </p>
 			<p>Birthday: <%= @profiles.birthday %> </p>
 			<p>Language: <%= @profiles.language %> </p>
 			<a href="/profiles/<%= @profiles.profile_id %>/edit">Edit Profile</a>
 		</div>
 
-</div>
-	<div class="favourite">
-		<p class="heading">
-		My Favourites
-		</p>
-		
-		<div class="favourite_info">
-		<!-- genres here -->
-		<p>Favourite Genres</p>
-
-		<%= @merp %>
-
-
-
-			<a href="/genres_profiles/<%= @profiles.profile_id %>/new">Add Favourites to Your Profile!</a>
-
-		
-	</div>
-	
 </div>
 
 </div>

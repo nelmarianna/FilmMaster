@@ -31,5 +31,5 @@ class MoviesController < ApplicationController
 
 
 end
-	end
+	
 
